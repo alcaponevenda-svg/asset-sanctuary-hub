@@ -148,40 +148,53 @@ const testimonials = [
   {
     name: "Roberto Almeida",
     handle: "@roberto.almeida",
+    role: "Empresário",
+    date: "Março 2025",
     avatar: avatar1,
     text: "O Dr. Mauro cuidou do planejamento sucessório da minha família com uma segurança impressionante. Hoje tenho tranquilidade sabendo que nosso patrimônio está protegido.",
   },
   {
     name: "Fernanda Costa",
     handle: "@fernanda.costa",
+    role: "Médica",
+    date: "Fevereiro 2025",
     avatar: avatar2,
     text: "Profissional extremamente competente e discreto. A holding familiar que estruturou para nós trouxe proteção real e eficiência tributária.",
   },
   {
     name: "Antônio Carvalho",
     handle: "@antonio.carvalho",
+    role: "Produtor Rural",
+    date: "Janeiro 2025",
     avatar: avatar3,
     text: "Conduziu o inventário dos meus pais com maestria, evitando conflitos e reduzindo drasticamente os prazos. Recomendo com total confiança.",
   },
   {
     name: "Patrícia Mendonça",
     handle: "@patricia.mendonca",
+    role: "Sócia-Diretora",
+    date: "Dezembro 2024",
     avatar: avatar4,
     text: "A consultoria em proteção patrimonial mudou a forma como vejo o futuro da minha empresa. Segurança jurídica e muita clareza em cada etapa.",
   },
   {
     name: "Ricardo Fonseca",
     handle: "@ricardo.fonseca",
+    role: "Investidor",
+    date: "Novembro 2024",
     avatar: avatar5,
     text: "Trabalho impecável na estruturação da minha holding familiar. Atendimento personalizado, ágil e com a excelência que eu esperava.",
   },
   {
     name: "Camila Ribeiro",
     handle: "@camila.ribeiro",
+    role: "Arquiteta",
+    date: "Outubro 2024",
     avatar: avatar6,
     text: "Excelência e humanidade em cada detalhe. O Dr. Mauro nos orientou com paciência e segurança durante todo o processo sucessório.",
   },
 ];
+
 
 function TestimonialCard({ t }: { t: (typeof testimonials)[number] }) {
   return (
