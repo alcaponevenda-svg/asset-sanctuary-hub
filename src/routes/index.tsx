@@ -486,7 +486,7 @@ function Index() {
               <div className="about-shoulder-light absolute inset-0" aria-hidden="true" />
               <div className="about-photo relative overflow-hidden rounded-md bg-[var(--gradient-gold)] p-1.5 sm:p-2">
                 <img
-                  src={aboutAsset.url}
+                  src={aboutAsset}
                   alt="Retrato do Dr. Mauro Monção Filho"
                   loading="lazy"
                   width={1024}
