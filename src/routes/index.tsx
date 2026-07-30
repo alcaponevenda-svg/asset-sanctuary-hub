@@ -16,11 +16,8 @@ import {
   Search,
   FileCheck,
   Shield,
-  ChevronLeft,
-  ChevronRight,
 } from "lucide-react";
 
-import { useState, useEffect } from "react";
 
 import { Reveal } from "@/components/Reveal";
 import heroAsset from "@/assets/mauro-hero-4.png.asset.json";
