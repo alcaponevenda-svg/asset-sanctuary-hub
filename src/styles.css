@@ -348,3 +348,99 @@ iframe[src*="lovable.dev/badge"] {
   height: 0 !important;
 }
 /* NEXUS-PRO:WATERMARK-HIDE:END */
+
+/* ===== Seção de contato: animações premium ===== */
+@keyframes contact-in-left {
+  from { opacity: 0; transform: translate3d(-30px, 0, 0); }
+  to { opacity: 1; transform: translate3d(0, 0, 0); }
+}
+@keyframes contact-in-right {
+  from { opacity: 0; transform: translate3d(30px, 0, 0); }
+  to { opacity: 1; transform: translate3d(0, 0, 0); }
+}
+@keyframes contact-field-in {
+  from { opacity: 0; transform: translate3d(0, 12px, 0); }
+  to { opacity: 1; transform: translate3d(0, 0, 0); }
+}
+
+.reveal.reveal-left.is-visible {
+  animation: contact-in-left 800ms cubic-bezier(0.16, 1, 0.3, 1) both;
+  will-change: transform, opacity;
+}
+.reveal.reveal-right.is-visible {
+  animation: contact-in-right 800ms cubic-bezier(0.16, 1, 0.3, 1) both;
+  will-change: transform, opacity;
+}
+
+.contact-img {
+  will-change: transform;
+  transform: translate3d(0, 0, 0) scale(1);
+  transition:
+    transform 400ms cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 400ms ease;
+}
+.contact-img:hover {
+  transform: translate3d(0, 0, 0) scale(1.02);
+  box-shadow: 0 26px 60px -34px oklch(0.727 0.089 84.5 / 0.5);
+}
+
+.contact-glow {
+  pointer-events: none;
+  background: radial-gradient(
+    60% 55% at 50% 40%,
+    oklch(0.727 0.089 84.5 / 0.05),
+    transparent 70%
+  );
+}
+
+.contact-field {
+  opacity: 0;
+}
+.reveal.is-visible .contact-field {
+  animation: contact-field-in 600ms cubic-bezier(0.16, 1, 0.3, 1) both;
+  will-change: transform, opacity;
+}
+
+.field-premium {
+  transition:
+    border-color 250ms ease,
+    box-shadow 250ms ease;
+}
+.field-premium:hover {
+  border-color: oklch(0.727 0.089 84.5 / 0.35);
+}
+.field-premium:focus {
+  border-color: oklch(0.727 0.089 84.5 / 0.6);
+  box-shadow: 0 0 0 3px oklch(0.727 0.089 84.5 / 0.08);
+}
+.field-premium::placeholder {
+  transition: opacity 250ms ease;
+}
+.field-premium:focus::placeholder {
+  opacity: 0.55;
+}
+
+.contact-submit {
+  will-change: transform;
+  transform: translate3d(0, 0, 0) scale(1);
+  transition:
+    transform 300ms cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 300ms ease,
+    filter 300ms ease;
+}
+.contact-submit:hover {
+  transform: translate3d(0, -3px, 0) scale(1.02);
+  box-shadow: 0 18px 40px -22px oklch(0.727 0.089 84.5 / 0.75);
+}
+.contact-submit:active {
+  transform: translate3d(0, 0, 0) scale(0.98);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .contact-field,
+  .reveal.reveal-left,
+  .reveal.reveal-right {
+    opacity: 1;
+    animation: none !important;
+  }
+}
