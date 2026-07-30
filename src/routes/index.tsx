@@ -20,6 +20,7 @@ import {
 
 
 import { Reveal } from "@/components/Reveal";
+import { AreaCard } from "@/components/AreaCard";
 import heroAsset from "@/assets/mauro-hero-4.png.asset.json";
 import heroBgAsset from "@/assets/hero-bg.png.asset.json";
 import sobreBgAsset from "@/assets/sobre-bg-2.png.asset.json";
@@ -375,21 +376,19 @@ function Index() {
 
           <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {areas.map((area, i) => (
-              <Reveal key={area.title} delay={i * 90}>
-                <article className="glass-card group h-full rounded-md p-6 sm:p-7 hover:-translate-y-1 hover:border-gold/40 hover:shadow-[var(--shadow-premium)]">
-                  <span className="flex h-11 w-11 items-center justify-center rounded-md bg-[var(--gradient-gold)]">
-                    <area.icon
-                      className="h-5 w-5 text-background"
-                      strokeWidth={1.8}
-                    />
-                  </span>
-                  <h3 className="mt-6 text-base font-semibold">{area.title}</h3>
-                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                    {area.text}
-                  </p>
-                </article>
+              <Reveal
+                key={area.title}
+                delay={i * 120}
+                className="reveal-area h-full"
+              >
+                <AreaCard
+                  icon={area.icon}
+                  title={area.title}
+                  text={area.text}
+                />
               </Reveal>
             ))}
+
           </div>
         </div>
       </section>
