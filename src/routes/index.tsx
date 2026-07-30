@@ -215,15 +215,6 @@ function Index() {
         <div className="mx-auto grid max-w-7xl items-center gap-14 px-6 lg:grid-cols-2 lg:px-10">
           <Reveal>
             <div className="relative overflow-hidden rounded-md border border-border bg-card p-6 sm:p-10">
-              <div className="absolute inset-0 opacity-25">
-                <img
-                  src={areaInventario}
-                  alt=""
-                  aria-hidden
-                  loading="lazy"
-                  className="h-full w-full object-cover"
-                />
-              </div>
               <div className="relative overflow-hidden rounded-md bg-[var(--gradient-gold)] p-2 sm:ml-10">
                 <img
                   src={aboutAsset.url}
