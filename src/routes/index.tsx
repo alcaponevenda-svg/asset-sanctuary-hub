@@ -221,8 +221,8 @@ function Index() {
                   alt="Retrato do Dr. Mauro Monção Filho"
                   loading="lazy"
                   width={1024}
-                  height={1280}
-                  className="h-[360px] w-full rounded-sm object-cover object-top sm:h-[460px]"
+                  height={1536}
+                  className="h-auto w-full rounded-sm object-contain"
                 />
               </div>
             </div>
