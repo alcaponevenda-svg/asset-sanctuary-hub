@@ -276,8 +276,10 @@ function TestimonialCarousel() {
     setCurrent((prev) => (prev + 1) % totalSlides);
   };
 
-  const trackWidth = `${testimonials.length * (100 / itemsPerPage)}%`;
-  const itemWidth = `${100 / itemsPerPage}%`;
+  const trackWidth = `${totalSlides * 100}%`;
+  const itemWidth = `${100 / testimonials.length}%`;
+  const translateX = `-${current * (100 / totalSlides)}%`;
+
 
   return (
     <div className="mt-14">
