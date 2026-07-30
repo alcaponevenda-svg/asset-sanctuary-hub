@@ -644,9 +644,7 @@ function Index() {
 
       {/* RODAPÉ */}
       <footer className="mt-10 border-t border-border bg-card/60 py-14">
-        <div className="mx-auto grid max-w-7xl gap-10 px-6 lg:grid-cols-3 lg:px-10">
-          <Logo />
-
+        <div className="mx-auto grid max-w-7xl gap-10 px-6 lg:grid-cols-2 lg:px-10">
           <div className="space-y-3 text-sm text-muted-foreground">
             <p className="flex items-center gap-3">
               <Mail className="h-4 w-4 shrink-0 text-gold" />
