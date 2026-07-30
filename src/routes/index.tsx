@@ -30,7 +30,7 @@ import { AreaCard } from "@/components/AreaCard";
 import heroAsset from "@/assets/mauro-hero-4.png.asset.json";
 import heroBgAsset from "@/assets/hero-bg.png.asset.json";
 import sobreBgAsset from "@/assets/sobre-bg-2.png.asset.json";
-import aboutAsset from "@/assets/mauro-sobre-2.png.asset.json";
+import aboutAsset from "@/assets/mauro-sobre-2.png";
 import areaInventario from "@/assets/area-inventario.jpg";
 import avatar1 from "@/assets/avatar-1.jpg.asset.json";
 import avatar2 from "@/assets/avatar-2.jpg.asset.json";
@@ -486,7 +486,7 @@ function Index() {
               <div className="about-shoulder-light absolute inset-0" aria-hidden="true" />
               <div className="about-photo relative overflow-hidden rounded-md bg-[var(--gradient-gold)] p-1.5 sm:p-2">
                 <img
-                  src={aboutAsset.url}
+                  src={aboutAsset}
                   alt="Retrato do Dr. Mauro Monção Filho"
                   loading="lazy"
                   width={1024}
