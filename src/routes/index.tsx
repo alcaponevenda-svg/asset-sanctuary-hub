@@ -352,6 +352,7 @@ function TestimonialCarousel() {
   );
 }
 
+const steps = [
   {
     number: "01",
     icon: CalendarCheck,
@@ -377,6 +378,7 @@ function TestimonialCarousel() {
     text: "Colocamos a estratégia em prática com acompanhamento especializado em todas as etapas legais.",
   },
 ];
+
 
 const fieldClass =
   "w-full rounded-md border border-input bg-background/60 px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground/60 outline-none transition-colors focus:border-gold/60";
