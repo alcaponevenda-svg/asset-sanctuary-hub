@@ -323,8 +323,7 @@ function Index() {
 
         <div className="relative mx-auto grid max-w-7xl items-center gap-10 px-6 pt-10 pb-20 lg:min-h-[92vh] lg:grid-cols-2 lg:px-10 lg:pt-0 lg:pb-0">
           <div className="animate-fade-up">
-            <Logo />
-            <h1 className="mt-10 text-4xl leading-[1.1] font-semibold tracking-tight text-balance sm:text-5xl">
+            <h1 className="text-4xl leading-[1.1] font-semibold tracking-tight text-balance sm:text-5xl">
               <span className="text-gradient-gold">Advogado Patrimonial</span>
               <br />
               especializado na proteção
