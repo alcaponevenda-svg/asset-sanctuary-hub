@@ -219,17 +219,18 @@ function Index() {
       </section>
 
       {/* SOBRE */}
-      <section id="sobre" className="relative overflow-hidden py-24 lg:py-32">
+      <section id="sobre" className="relative overflow-hidden py-28 lg:py-40">
         <div
-          className="pointer-events-none absolute inset-0 bg-[length:55%_auto] bg-right bg-no-repeat opacity-75"
+          className="pointer-events-none absolute inset-0 bg-[length:65%_auto] bg-right bg-no-repeat opacity-80"
           style={{ backgroundImage: `url(${sobreBgAsset.url})` }}
         />
-        <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(90deg,var(--background)_20%,transparent_95%)]" />
+        <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(90deg,var(--background)_15%,transparent_92%)]" />
         <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(0deg,var(--background)_0%,transparent_35%)]" />
-        <div className="relative mx-auto grid max-w-7xl items-center gap-16 px-6 lg:grid-cols-[1fr_1.2fr] lg:px-10">
+        <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,var(--background)_0%,transparent_25%)]" />
+        <div className="relative mx-auto grid max-w-7xl items-center gap-20 px-6 lg:grid-cols-[1fr_1.5fr] lg:px-10">
           <Reveal>
-            <div className="relative overflow-hidden rounded-md p-6 sm:p-10">
-              <div className="relative overflow-hidden rounded-md bg-[var(--gradient-gold)] p-2 sm:ml-10">
+            <div className="relative overflow-hidden rounded-md p-8 sm:p-12">
+              <div className="relative overflow-hidden rounded-md bg-[var(--gradient-gold)] p-2 sm:ml-14">
                 <img
                   src={aboutAsset.url}
                   alt="Retrato do Dr. Mauro Monção Filho"
@@ -245,37 +246,37 @@ function Index() {
 
           <Reveal delay={120}>
             <Pill>Sobre</Pill>
-            <h2 className="mt-6 text-3xl font-semibold tracking-tight sm:text-4xl">
+            <h2 className="mt-6 text-3xl font-semibold tracking-tight text-balance sm:text-4xl lg:text-5xl">
               Quem é{" "}
               <span className="text-gradient-gold">Dr. Mauro Monção Filho</span>
             </h2>
-            <p className="mt-6 text-sm leading-relaxed text-muted-foreground">
+            <p className="mt-6 text-base leading-relaxed text-muted-foreground">
               Advogado especialista em Proteção Patrimonial, Planejamento
               Sucessório e Inventários. Atua auxiliando famílias e empresários na
               preservação de patrimônios, com soluções jurídicas personalizadas,
               segurança e discrição.
             </p>
-            <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
+            <p className="mt-4 text-base leading-relaxed text-muted-foreground">
               Com ampla experiência em estruturas patrimoniais e sucessões, é
               reconhecido pela abordagem estratégica e humanizada, atendendo
               clientes em todo o território nacional com excelência técnica.
             </p>
 
-            <div className="mt-9 grid grid-cols-3 gap-4">
+            <div className="mt-10 grid grid-cols-3 gap-5">
               {stats.map((stat) => (
                 <div
                   key={stat.label}
-                  className="rounded-md border border-border bg-card px-4 py-5 text-center"
+                  className="rounded-md border border-border bg-card px-4 py-6 text-center"
                 >
-                  <p className="text-2xl font-semibold text-gold">{stat.value}</p>
-                  <p className="mt-1 text-[11px] leading-tight text-muted-foreground">
+                  <p className="text-3xl font-semibold text-gold">{stat.value}</p>
+                  <p className="mt-1 text-xs leading-tight text-muted-foreground">
                     {stat.label}
                   </p>
                 </div>
               ))}
             </div>
 
-            <div className="mt-9">
+            <div className="mt-10">
               <GoldButton>Falar com advogado</GoldButton>
             </div>
           </Reveal>
