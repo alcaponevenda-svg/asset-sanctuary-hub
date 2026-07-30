@@ -17,7 +17,7 @@ import { Reveal } from "@/components/Reveal";
 import heroAsset from "@/assets/mauro-hero-4.png.asset.json";
 import heroBgAsset from "@/assets/hero-bg.png.asset.json";
 import sobreBgAsset from "@/assets/sobre-bg.png.asset.json";
-import aboutAsset from "@/assets/mauro-sobre.png.asset.json";
+import aboutAsset from "@/assets/mauro-sobre-2.png.asset.json";
 import areaInventario from "@/assets/area-inventario.jpg";
 
 export const Route = createFileRoute("/")({
