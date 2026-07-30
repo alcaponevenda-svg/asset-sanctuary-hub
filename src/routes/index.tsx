@@ -136,14 +136,12 @@ function Index() {
       {/* HERO */}
       <section className="relative overflow-hidden">
         <div
-          className="pointer-events-none absolute inset-0 bg-cover bg-left bg-no-repeat brightness-150"
+          className="pointer-events-none absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{ backgroundImage: `url(${heroBgAsset.url})` }}
         />
-        <div className="pointer-events-none absolute inset-0 bg-[oklch(0.146_0_0_/_0.35)]" />
-
+        <div className="pointer-events-none absolute inset-0 bg-[oklch(0.146_0_0_/_0.45)]" />
         <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(0deg,var(--background)_0%,transparent_35%)]" />
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(90%_60%_at_75%_20%,oklch(0.32_0.03_80/0.35),transparent_60%)]" />
-
 
         <div className="relative mx-auto grid max-w-7xl items-center gap-10 px-6 pt-10 pb-20 lg:min-h-[92vh] lg:grid-cols-2 lg:px-10 lg:pt-0 lg:pb-0">
           <div className="animate-fade-up">
@@ -155,7 +153,7 @@ function Index() {
               <br />
               do seu patrimônio.
             </h1>
-            <p className="mt-6 max-w-md text-sm leading-relaxed text-muted-foreground">
+            <p className="mt-6 max-w-md text-base leading-relaxed text-muted-foreground">
               Atuação técnica e estratégica em proteção patrimonial, holding
               familiar, inventários e planejamento sucessório — em todo o Brasil.
             </p>
@@ -173,8 +171,7 @@ function Index() {
                 height={1408}
                 className="h-full w-full object-cover object-top"
               />
-              <div className="absolute inset-0 bg-[linear-gradient(90deg,var(--background)_0%,transparent_55%)]" />
-              <div className="absolute inset-0 bg-[linear-gradient(0deg,var(--background)_2%,transparent_50%)]" />
+              <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(0deg,var(--background)_2%,transparent_40%)]" />
             </div>
           </div>
         </div>
