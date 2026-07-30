@@ -14,7 +14,7 @@ import {
 } from "lucide-react";
 
 import { Reveal } from "@/components/Reveal";
-import heroAsset from "@/assets/mauro-hero-transparente.png.asset.json";
+import heroAsset from "@/assets/mauro-hero-2.png.asset.json";
 import aboutLawyer from "@/assets/about-lawyer.jpg";
 import areaInventario from "@/assets/area-inventario.jpg";
 
