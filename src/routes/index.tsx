@@ -163,7 +163,26 @@ const testimonials = [
     avatar: avatar3,
     text: "Conduziu o inventário dos meus pais com maestria, evitando conflitos e reduzindo drasticamente os prazos. Recomendo com total confiança.",
   },
+  {
+    name: "Patrícia Mendonça",
+    handle: "@patricia.mendonca",
+    avatar: avatar4,
+    text: "A consultoria em proteção patrimonial mudou a forma como vejo o futuro da minha empresa. Segurança jurídica e muita clareza em cada etapa.",
+  },
+  {
+    name: "Ricardo Fonseca",
+    handle: "@ricardo.fonseca",
+    avatar: avatar5,
+    text: "Trabalho impecável na estruturação da minha holding familiar. Atendimento personalizado, ágil e com a excelência que eu esperava.",
+  },
+  {
+    name: "Camila Ribeiro",
+    handle: "@camila.ribeiro",
+    avatar: avatar6,
+    text: "Excelência e humanidade em cada detalhe. O Dr. Mauro nos orientou com paciência e segurança durante todo o processo sucessório.",
+  },
 ];
+
 
 const steps = [
   {
