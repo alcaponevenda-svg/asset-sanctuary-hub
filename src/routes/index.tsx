@@ -221,12 +221,12 @@ function Index() {
       {/* SOBRE */}
       <section id="sobre" className="relative overflow-hidden py-28 lg:py-40">
         <div
-          className="pointer-events-none absolute inset-0 bg-[length:65%_auto] bg-right bg-no-repeat opacity-80"
+          className="pointer-events-none absolute inset-0 bg-cover bg-center opacity-60"
           style={{ backgroundImage: `url(${sobreBgAsset.url})` }}
         />
-        <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(90deg,var(--background)_15%,transparent_92%)]" />
-        <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(0deg,var(--background)_0%,transparent_35%)]" />
-        <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,var(--background)_0%,transparent_25%)]" />
+        <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(90deg,var(--background)_0%,transparent_70%)]" />
+        <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(0deg,var(--background)_0%,transparent_45%)]" />
+        <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,var(--background)_0%,transparent_30%)]" />
         <div className="relative mx-auto grid max-w-7xl items-center gap-20 px-6 lg:grid-cols-[1fr_1.5fr] lg:px-10">
           <Reveal>
             <div className="relative overflow-hidden rounded-md p-8 sm:p-12">
