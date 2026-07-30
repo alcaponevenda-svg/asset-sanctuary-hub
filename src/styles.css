@@ -313,11 +313,13 @@
 
 @media (prefers-reduced-motion: reduce) {
   .reveal,
+  .reveal-area,
   .animate-fade-up,
   .animate-fade-in {
     opacity: 1;
     animation: none !important;
   }
+
 
   .marquee-track {
     animation: none !important;
