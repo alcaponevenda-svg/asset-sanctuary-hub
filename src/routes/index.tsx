@@ -183,7 +183,7 @@ const testimonials = [
 
 function TestimonialCard({ t }: { t: (typeof testimonials)[number] }) {
   return (
-    <article className="glass-card h-full rounded-md p-7 transition-all duration-300 hover:scale-[1.03] hover:border-gold/50 hover:shadow-[var(--shadow-premium)]">
+    <article className="glass-card h-full rounded-md p-6 sm:p-7 transition-all duration-300 hover:scale-[1.03] hover:border-gold/50 hover:shadow-[var(--shadow-premium)]">
       <div className="flex items-center justify-between">
         <div className="flex gap-0.5">
           {[...Array(5)].map((_, idx) => (
@@ -364,7 +364,7 @@ function Index() {
       </section>
 
       {/* ÁREAS DE ATUAÇÃO */}
-      <section id="atuacao" className="py-24 lg:py-32">
+      <section id="atuacao" className="py-16 sm:py-24 lg:py-32">
         <div className="mx-auto max-w-7xl px-6 lg:px-10">
           <Reveal className="text-center">
             <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">
@@ -376,7 +376,7 @@ function Index() {
           <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {areas.map((area, i) => (
               <Reveal key={area.title} delay={i * 90}>
-                <article className="glass-card group h-full rounded-md p-7 hover:-translate-y-1 hover:border-gold/40 hover:shadow-[var(--shadow-premium)]">
+                <article className="glass-card group h-full rounded-md p-6 sm:p-7 hover:-translate-y-1 hover:border-gold/40 hover:shadow-[var(--shadow-premium)]">
                   <span className="flex h-11 w-11 items-center justify-center rounded-md bg-[var(--gradient-gold)]">
                     <area.icon
                       className="h-5 w-5 text-background"
@@ -395,7 +395,7 @@ function Index() {
       </section>
 
       {/* DEPOIMENTOS */}
-      <section id="depoimentos" className="relative overflow-hidden py-24 lg:py-32">
+      <section id="depoimentos" className="relative overflow-hidden py-16 sm:py-24 lg:py-32">
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(60%_50%_at_50%_0%,oklch(0.32_0.03_80/0.15),transparent_70%)]" />
         <div className="relative mx-auto max-w-7xl px-6 lg:px-10">
           <Reveal className="text-center">
@@ -419,7 +419,7 @@ function Index() {
 
 
       {/* JORNADA PASSO A PASSO */}
-      <section className="section-light py-24 lg:py-32">
+      <section className="section-light py-16 sm:py-24 lg:py-32">
         <div className="mx-auto max-w-7xl px-6 lg:px-10">
           <div className="grid gap-10 lg:grid-cols-2 lg:items-end">
             <Reveal>
@@ -440,7 +440,7 @@ function Index() {
           <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {steps.map((step, i) => (
               <Reveal key={step.number} delay={i * 90}>
-                <article className="glass-card group h-full rounded-md p-7 transition-all duration-500 hover:-translate-y-1 hover:border-gold/40 hover:shadow-[var(--shadow-premium)]">
+                <article className="glass-card group h-full rounded-md p-6 sm:p-7 transition-all duration-500 hover:-translate-y-1 hover:border-gold/40 hover:shadow-[var(--shadow-premium)]">
                   <span className="flex h-11 w-11 items-center justify-center rounded-md bg-[var(--gradient-gold)]">
                     <step.icon
                       className="h-5 w-5 text-background"
@@ -462,7 +462,7 @@ function Index() {
       </section>
 
       {/* SOBRE */}
-      <section id="sobre" className="relative overflow-hidden py-28 lg:py-40">
+      <section id="sobre" className="relative overflow-hidden py-16 sm:py-28 lg:py-40">
 
         <div
           className="pointer-events-none absolute inset-0 bg-cover bg-right opacity-60"
@@ -529,8 +529,8 @@ function Index() {
       </section>
 
       {/* CONTATO */}
-      <section id="contato" className="py-20 lg:py-28">
-        <div className="mx-auto grid max-w-7xl items-center gap-14 px-6 lg:grid-cols-2 lg:px-10">
+      <section id="contato" className="py-16 sm:py-20 lg:py-28">
+        <div className="mx-auto grid max-w-7xl items-center gap-10 px-6 sm:gap-14 lg:grid-cols-2 lg:px-10">
           <Reveal>
             <h2 className="text-3xl font-semibold tracking-tight text-balance sm:text-4xl">
               Como <span className="text-gradient-gold">podemos ajudar</span> a
@@ -554,7 +554,7 @@ function Index() {
 
           <Reveal delay={120}>
             <form
-              className="glass-card rounded-md p-8 sm:p-10"
+              className="glass-card rounded-md p-6 sm:p-10"
               onSubmit={(e) => e.preventDefault()}
             >
               <h3 className="text-2xl font-semibold">Converse conosco!</h3>
