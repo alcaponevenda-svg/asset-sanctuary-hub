@@ -183,8 +183,175 @@ const testimonials = [
   },
 ];
 
+function TestimonialCard({ t }: { t: (typeof testimonials)[number] }) {
+  return (
+    <article className="glass-card h-full rounded-md p-7 transition-all duration-500 hover:-translate-y-1 hover:border-gold/40 hover:shadow-[var(--shadow-premium)]">
+      <div className="flex items-center justify-between">
+        <div className="flex items-center gap-4">
+          <img
+            src={t.avatar.url}
+            alt={t.name}
+            width={48}
+            height={48}
+            loading="lazy"
+            className="h-12 w-12 rounded-full object-cover ring-2 ring-gold/20"
+          />
+          <div>
+            <p className="text-sm font-semibold">{t.name}</p>
+            <p className="text-xs text-muted-foreground">{t.handle}</p>
+          </div>
+        </div>
+        <svg
+          className="h-5 w-5 shrink-0"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          aria-label="Google"
+        >
+          <path
+            d="M23.5 12.28c0-.86-.08-1.68-.22-2.47H12v4.68h6.45c-.28 1.48-1.12 2.73-2.38 3.57v2.97h3.85c2.25-2.08 3.55-5.14 3.55-8.75z"
+            fill="#4285F4"
+          />
+          <path
+            d="M12 24c3.24 0 5.96-1.08 7.94-2.91l-3.85-2.97c-1.07.72-2.44 1.14-4.09 1.14-3.15 0-5.82-2.13-6.77-4.99H1.45v3.07C3.42 21.3 7.4 24 12 24z"
+            fill="#34A853"
+          />
+          <path
+            d="M5.23 14.27c-.24-.72-.38-1.49-.38-2.27s.14-1.55.38-2.27V6.66H1.45C.53 8.46 0 10.48 0 12.5c0 2.02.53 4.04 1.45 5.84l3.78-3.07z"
+            fill="#FBBC05"
+          />
+          <path
+            d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.45-3.45C17.95 1.19 15.23 0 12 0 7.4 0 3.42 2.7 1.45 6.66l3.78 3.07c.95-2.86 3.62-4.98 6.77-4.98z"
+            fill="#EA4335"
+          />
+        </svg>
+      </div>
 
-const steps = [
+      <div className="mt-4 flex gap-0.5">
+        {[...Array(5)].map((_, idx) => (
+          <Star
+            key={idx}
+            className="h-4 w-4 fill-gold text-gold"
+            strokeWidth={1.5}
+          />
+        ))}
+      </div>
+
+      <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
+        {t.text}
+      </p>
+    </article>
+  );
+}
+
+function TestimonialCarousel() {
+  const [current, setCurrent] = useState(0);
+  const [itemsPerPage, setItemsPerPage] = useState(3);
+
+  useEffect(() => {
+    const update = () => {
+      setItemsPerPage(window.innerWidth >= 1024 ? 3 : window.innerWidth >= 640 ? 2 : 1);
+      setCurrent((prev) => prev);
+    };
+    update();
+    window.addEventListener("resize", update);
+    return () => window.removeEventListener("resize", update);
+  }, []);
+
+  const totalSlides = Math.max(1, Math.ceil(testimonials.length / itemsPerPage));
+
+  useEffect(() => {
+    if (totalSlides <= 1) return;
+    const interval = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % totalSlides);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, [totalSlides]);
+
+  const handlePrev = () => {
+    setCurrent((prev) => (prev === 0 ? totalSlides - 1 : prev - 1));
+  };
+
+  const handleNext = () => {
+    setCurrent((prev) => (prev + 1) % totalSlides);
+  };
+
+  const trackWidth = `${testimonials.length * (100 / itemsPerPage)}%`;
+  const itemWidth = `${100 / itemsPerPage}%`;
+
+  return (
+    <div className="mt-14">
+      <div className="relative overflow-hidden">
+        <div
+          className="flex transition-transform duration-700 ease-out"
+          style={{
+            transform: `translateX(-${current * (100 / testimonials.length) * itemsPerPage}%)`,
+            width: trackWidth,
+          }}
+        >
+          {testimonials.map((t) => (
+            <div
+              key={t.name}
+              style={{ width: itemWidth }}
+              className="flex-shrink-0 px-3"
+            >
+              <TestimonialCard t={t} />
+            </div>
+          ))}
+        </div>
+
+        <button
+          onClick={handlePrev}
+          aria-label="Depoimento anterior"
+          className="absolute left-0 top-1/2 z-10 hidden -translate-y-1/2 items-center justify-center rounded-full border border-border bg-background/80 p-3 text-foreground shadow-lg backdrop-blur-sm transition-all hover:border-gold/50 hover:text-gold lg:flex"
+        >
+          <ChevronLeft className="h-5 w-5" />
+        </button>
+        <button
+          onClick={handleNext}
+          aria-label="Próximo depoimento"
+          className="absolute right-0 top-1/2 z-10 hidden -translate-y-1/2 items-center justify-center rounded-full border border-border bg-background/80 p-3 text-foreground shadow-lg backdrop-blur-sm transition-all hover:border-gold/50 hover:text-gold lg:flex"
+        >
+          <ChevronRight className="h-5 w-5" />
+        </button>
+      </div>
+
+      <div className="mt-8 flex items-center justify-center gap-3">
+        <button
+          onClick={handlePrev}
+          aria-label="Depoimento anterior"
+          className="flex h-9 w-9 items-center justify-center rounded-full border border-border bg-background/60 text-foreground transition-colors hover:border-gold/50 hover:text-gold lg:hidden"
+        >
+          <ChevronLeft className="h-4 w-4" />
+        </button>
+
+        <div className="flex gap-2">
+          {Array.from({ length: totalSlides }).map((_, i) => (
+            <button
+              key={i}
+              onClick={() => setCurrent(i)}
+              aria-label={`Ir para slide ${i + 1}`}
+              className={`h-2.5 rounded-full transition-all duration-300 ${
+                i === current
+                  ? "w-6 bg-gold"
+                  : "w-2.5 bg-white/20 hover:bg-white/40"
+              }`}
+            />
+          ))}
+        </div>
+
+        <button
+          onClick={handleNext}
+          aria-label="Próximo depoimento"
+          className="flex h-9 w-9 items-center justify-center rounded-full border border-border bg-background/60 text-foreground transition-colors hover:border-gold/50 hover:text-gold lg:hidden"
+        >
+          <ChevronRight className="h-4 w-4" />
+        </button>
+      </div>
+    </div>
+  );
+}
+
   {
     number: "01",
     icon: CalendarCheck,
