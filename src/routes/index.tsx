@@ -11,6 +11,11 @@ import {
   Instagram,
   Linkedin,
   Facebook,
+  Star,
+  CalendarCheck,
+  Search,
+  FileCheck,
+  Shield,
 } from "lucide-react";
 
 import { Reveal } from "@/components/Reveal";
@@ -19,6 +24,10 @@ import heroBgAsset from "@/assets/hero-bg.png.asset.json";
 import sobreBgAsset from "@/assets/sobre-bg-2.png.asset.json";
 import aboutAsset from "@/assets/mauro-sobre-2.png.asset.json";
 import areaInventario from "@/assets/area-inventario.jpg";
+import avatar1 from "@/assets/avatar-1.jpg.asset.json";
+import avatar2 from "@/assets/avatar-2.jpg.asset.json";
+import avatar3 from "@/assets/avatar-3.jpg.asset.json";
+
 
 export const Route = createFileRoute("/")({
   head: () => ({
