@@ -505,14 +505,16 @@ function Index() {
               clientes em todo o território nacional com excelência técnica.
             </p>
 
-            <div className="mt-10 grid grid-cols-3 gap-5">
+            <div className="mt-10 grid grid-cols-3 gap-3 sm:gap-5">
               {stats.map((stat) => (
                 <div
                   key={stat.label}
-                  className="rounded-md border border-border bg-card px-4 py-6 text-center"
+                  className="rounded-md border border-border bg-card px-2 py-5 text-center sm:px-4 sm:py-6"
                 >
-                  <p className="text-3xl font-semibold text-gold">{stat.value}</p>
-                  <p className="mt-1 text-xs leading-tight text-muted-foreground">
+                  <p className="text-xl font-semibold text-gold sm:text-3xl">
+                    {stat.value}
+                  </p>
+                  <p className="mt-1 text-[11px] leading-tight text-muted-foreground sm:text-xs">
                     {stat.label}
                   </p>
                 </div>
