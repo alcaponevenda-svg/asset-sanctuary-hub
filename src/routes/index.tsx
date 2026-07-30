@@ -227,10 +227,10 @@ function Index() {
         <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(90deg,var(--background)_0%,transparent_70%)]" />
         <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(0deg,var(--background)_0%,transparent_45%)]" />
         <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,var(--background)_0%,transparent_30%)]" />
-        <div className="relative mx-auto grid max-w-7xl items-center gap-20 px-6 lg:grid-cols-[1fr_1.5fr] lg:px-10">
+        <div className="relative mx-auto grid max-w-7xl items-center gap-20 px-6 lg:grid-cols-[1.2fr_1.5fr] lg:px-10">
           <Reveal>
-            <div className="relative overflow-hidden rounded-md p-8 sm:p-12">
-              <div className="relative overflow-hidden rounded-md bg-[var(--gradient-gold)] p-2 sm:ml-14">
+            <div className="relative overflow-hidden rounded-md p-6 sm:p-10">
+              <div className="relative overflow-hidden rounded-md bg-[var(--gradient-gold)] p-2">
                 <img
                   src={aboutAsset.url}
                   alt="Retrato do Dr. Mauro Monção Filho"
