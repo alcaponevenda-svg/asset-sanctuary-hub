@@ -139,7 +139,7 @@ function Index() {
           className="pointer-events-none absolute inset-0 bg-cover bg-center opacity-60"
           style={{ backgroundImage: `url(${heroBgAsset.url})` }}
         />
-        <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(90deg,var(--background)_0%,transparent_70%)]" />
+        <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(90deg,oklch(0.146_0_0_/_0.75)_0%,transparent_70%)]" />
         <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(0deg,var(--background)_0%,transparent_45%)]" />
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(90%_60%_at_75%_20%,oklch(0.32_0.03_80/0.55),transparent_60%)]" />
         <div className="relative mx-auto grid max-w-7xl items-center gap-10 px-6 pt-10 pb-20 lg:min-h-[92vh] lg:grid-cols-2 lg:px-10 lg:pt-0 lg:pb-0">
