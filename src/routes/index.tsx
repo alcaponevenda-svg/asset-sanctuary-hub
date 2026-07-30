@@ -215,7 +215,7 @@ function Index() {
         <div className="mx-auto grid max-w-7xl items-center gap-14 px-6 lg:grid-cols-2 lg:px-10">
           <Reveal>
             <div className="relative overflow-hidden rounded-md p-6 sm:p-10">
-              <div className="relative overflow-hidden rounded-md bg-[var(--gradient-gold)] p-2 shadow-[0_25px_60px_-15px_oklch(0_0_0/0.75)] sm:ml-10">
+              <div className="relative overflow-hidden rounded-md bg-[var(--gradient-gold)] p-2 sm:ml-10">
                 <img
                   src={aboutAsset.url}
                   alt="Retrato do Dr. Mauro Monção Filho"
