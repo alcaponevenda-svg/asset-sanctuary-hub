@@ -224,6 +224,7 @@ function Index() {
                   height={1536}
                   className="h-auto w-full rounded-sm object-contain"
                 />
+                <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(0deg,var(--background)_0%,transparent_55%)]" />
               </div>
             </div>
           </Reveal>
