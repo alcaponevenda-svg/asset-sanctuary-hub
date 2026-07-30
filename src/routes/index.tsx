@@ -63,27 +63,6 @@ export const Route = createFileRoute("/")({
 
 const CTA_HREF = "#contato";
 
-function Logo() {
-  return (
-    <a href="#topo" className="flex items-center gap-3" aria-label="Página inicial">
-      <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-sm border border-gold/50 text-sm font-semibold tracking-[0.12em] text-gold">
-        MM
-      </span>
-      <span className="flex flex-col border-l border-border pl-3 leading-tight">
-        <span className="text-sm font-semibold tracking-[0.22em] uppercase">
-          Mauro
-        </span>
-        <span className="text-sm font-semibold tracking-[0.22em] uppercase">
-          Monção
-        </span>
-        <span className="text-[8px] tracking-[0.3em] uppercase text-muted-foreground">
-          Advocacia Patrimonial
-        </span>
-      </span>
-    </a>
-  );
-}
-
 function GoldButton({
   className = "",
   href = CTA_HREF,
