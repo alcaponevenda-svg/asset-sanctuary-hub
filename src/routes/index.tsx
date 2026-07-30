@@ -75,7 +75,7 @@ function GoldButton({
   variant?: "solid" | "outline";
 }) {
   const base =
-    "group inline-flex items-center justify-center gap-3 rounded-full px-8 py-4 text-sm font-medium transition-all duration-500 hover:-translate-y-0.5";
+    "group inline-flex w-full sm:w-auto items-center justify-center gap-3 rounded-full px-6 sm:px-8 py-3.5 sm:py-4 text-sm font-medium transition-all duration-500 hover:-translate-y-0.5";
   const styles =
     variant === "solid"
       ? "text-background shadow-[var(--shadow-gold)] hover:brightness-110"
@@ -183,7 +183,7 @@ const testimonials = [
 
 function TestimonialCard({ t }: { t: (typeof testimonials)[number] }) {
   return (
-    <article className="glass-card h-full rounded-md p-7 transition-all duration-300 hover:scale-[1.03] hover:border-gold/50 hover:shadow-[var(--shadow-premium)]">
+    <article className="glass-card h-full rounded-md p-6 sm:p-7 transition-all duration-300 hover:scale-[1.03] hover:border-gold/50 hover:shadow-[var(--shadow-premium)]">
       <div className="flex items-center justify-between">
         <div className="flex gap-0.5">
           {[...Array(5)].map((_, idx) => (
@@ -330,26 +330,26 @@ function Index() {
         <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(0deg,var(--background)_0%,transparent_35%)]" />
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(90%_60%_at_75%_20%,oklch(0.32_0.03_80/0.35),transparent_60%)]" />
 
-        <div className="relative mx-auto grid max-w-7xl items-center gap-10 px-6 pt-10 pb-20 lg:min-h-[92vh] lg:grid-cols-2 lg:px-10 lg:pt-0 lg:pb-0">
+        <div className="relative mx-auto grid max-w-7xl items-center gap-8 px-6 pt-12 pb-14 sm:gap-10 sm:pb-20 lg:min-h-[92vh] lg:grid-cols-2 lg:px-10 lg:pt-0 lg:pb-0">
           <div className="animate-fade-up">
-            <h1 className="text-4xl leading-[1.1] font-semibold tracking-tight text-balance sm:text-5xl">
+            <h1 className="text-[1.75rem] leading-[1.15] font-semibold tracking-tight text-balance sm:text-5xl sm:leading-[1.1]">
               <span className="text-gradient-gold">Advogado Patrimonial</span>
-              <br />
+              <br className="hidden sm:block" />{" "}
               especializado na proteção
-              <br />
+              <br className="hidden sm:block" />{" "}
               do seu patrimônio.
             </h1>
-            <p className="mt-6 max-w-md text-base leading-relaxed text-muted-foreground">
+            <p className="mt-5 max-w-md text-sm leading-relaxed text-muted-foreground sm:mt-6 sm:text-base">
               Atuação técnica e estratégica em proteção patrimonial, holding
               familiar, inventários e planejamento sucessório — em todo o Brasil.
             </p>
-            <div className="mt-9">
+            <div className="mt-8 sm:mt-9">
               <GoldButton>Agendar Consultoria</GoldButton>
             </div>
           </div>
 
           <div className="relative animate-fade-in lg:h-[92vh] lg:scale-105">
-            <div className="relative h-[420px] overflow-hidden sm:h-[560px] lg:h-full">
+            <div className="relative h-[380px] overflow-hidden sm:h-[560px] lg:h-full">
               <img
                 src={heroAsset.url}
                 alt="Dr. Mauro Monção Filho, advogado especialista em proteção patrimonial"
@@ -364,7 +364,7 @@ function Index() {
       </section>
 
       {/* ÁREAS DE ATUAÇÃO */}
-      <section id="atuacao" className="py-24 lg:py-32">
+      <section id="atuacao" className="py-16 sm:py-24 lg:py-32">
         <div className="mx-auto max-w-7xl px-6 lg:px-10">
           <Reveal className="text-center">
             <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">
@@ -376,7 +376,7 @@ function Index() {
           <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {areas.map((area, i) => (
               <Reveal key={area.title} delay={i * 90}>
-                <article className="glass-card group h-full rounded-md p-7 hover:-translate-y-1 hover:border-gold/40 hover:shadow-[var(--shadow-premium)]">
+                <article className="glass-card group h-full rounded-md p-6 sm:p-7 hover:-translate-y-1 hover:border-gold/40 hover:shadow-[var(--shadow-premium)]">
                   <span className="flex h-11 w-11 items-center justify-center rounded-md bg-[var(--gradient-gold)]">
                     <area.icon
                       className="h-5 w-5 text-background"
@@ -395,7 +395,7 @@ function Index() {
       </section>
 
       {/* DEPOIMENTOS */}
-      <section id="depoimentos" className="relative overflow-hidden py-24 lg:py-32">
+      <section id="depoimentos" className="relative overflow-hidden py-16 sm:py-24 lg:py-32">
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(60%_50%_at_50%_0%,oklch(0.32_0.03_80/0.15),transparent_70%)]" />
         <div className="relative mx-auto max-w-7xl px-6 lg:px-10">
           <Reveal className="text-center">
@@ -419,7 +419,7 @@ function Index() {
 
 
       {/* JORNADA PASSO A PASSO */}
-      <section className="section-light py-24 lg:py-32">
+      <section className="section-light py-16 sm:py-24 lg:py-32">
         <div className="mx-auto max-w-7xl px-6 lg:px-10">
           <div className="grid gap-10 lg:grid-cols-2 lg:items-end">
             <Reveal>
@@ -440,7 +440,7 @@ function Index() {
           <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {steps.map((step, i) => (
               <Reveal key={step.number} delay={i * 90}>
-                <article className="glass-card group h-full rounded-md p-7 transition-all duration-500 hover:-translate-y-1 hover:border-gold/40 hover:shadow-[var(--shadow-premium)]">
+                <article className="glass-card group h-full rounded-md p-6 sm:p-7 transition-all duration-500 hover:-translate-y-1 hover:border-gold/40 hover:shadow-[var(--shadow-premium)]">
                   <span className="flex h-11 w-11 items-center justify-center rounded-md bg-[var(--gradient-gold)]">
                     <step.icon
                       className="h-5 w-5 text-background"
@@ -462,19 +462,20 @@ function Index() {
       </section>
 
       {/* SOBRE */}
-      <section id="sobre" className="relative overflow-hidden py-28 lg:py-40">
+      <section id="sobre" className="relative overflow-hidden py-16 sm:py-28 lg:py-40">
 
         <div
           className="pointer-events-none absolute inset-0 bg-cover bg-right opacity-60"
           style={{ backgroundImage: `url(${sobreBgAsset.url})` }}
         />
+        <div className="pointer-events-none absolute inset-0 bg-background/70 lg:hidden" />
         <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(90deg,var(--background)_0%,transparent_70%)]" />
         <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(0deg,var(--background)_0%,transparent_45%)]" />
         <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,var(--background)_0%,transparent_30%)]" />
-        <div className="relative mx-auto grid max-w-7xl items-center gap-20 px-6 lg:grid-cols-[1.2fr_1.5fr] lg:px-10">
+        <div className="relative mx-auto grid max-w-7xl items-center gap-10 px-6 lg:grid-cols-[1.2fr_1.5fr] lg:gap-20 lg:px-10">
           <Reveal>
-            <div className="relative overflow-hidden rounded-md p-6 sm:p-10">
-              <div className="relative overflow-hidden rounded-md bg-[var(--gradient-gold)] p-2">
+            <div className="relative overflow-hidden rounded-md sm:p-10 lg:p-6">
+              <div className="relative overflow-hidden rounded-md bg-[var(--gradient-gold)] p-1.5 sm:p-2">
                 <img
                   src={aboutAsset.url}
                   alt="Retrato do Dr. Mauro Monção Filho"
@@ -505,14 +506,16 @@ function Index() {
               clientes em todo o território nacional com excelência técnica.
             </p>
 
-            <div className="mt-10 grid grid-cols-3 gap-5">
+            <div className="mt-10 grid grid-cols-3 gap-3 sm:gap-5">
               {stats.map((stat) => (
                 <div
                   key={stat.label}
-                  className="rounded-md border border-border bg-card px-4 py-6 text-center"
+                  className="rounded-md border border-border bg-card px-2 py-5 text-center sm:px-4 sm:py-6"
                 >
-                  <p className="text-3xl font-semibold text-gold">{stat.value}</p>
-                  <p className="mt-1 text-xs leading-tight text-muted-foreground">
+                  <p className="text-xl font-semibold text-gold sm:text-3xl">
+                    {stat.value}
+                  </p>
+                  <p className="mt-1 text-[11px] leading-tight text-muted-foreground sm:text-xs">
                     {stat.label}
                   </p>
                 </div>
@@ -527,8 +530,8 @@ function Index() {
       </section>
 
       {/* CONTATO */}
-      <section id="contato" className="py-20 lg:py-28">
-        <div className="mx-auto grid max-w-7xl items-center gap-14 px-6 lg:grid-cols-2 lg:px-10">
+      <section id="contato" className="py-16 sm:py-20 lg:py-28">
+        <div className="mx-auto grid max-w-7xl items-center gap-10 px-6 sm:gap-14 lg:grid-cols-2 lg:px-10">
           <Reveal>
             <h2 className="text-3xl font-semibold tracking-tight text-balance sm:text-4xl">
               Como <span className="text-gradient-gold">podemos ajudar</span> a
@@ -552,7 +555,7 @@ function Index() {
 
           <Reveal delay={120}>
             <form
-              className="glass-card rounded-md p-8 sm:p-10"
+              className="glass-card rounded-md p-6 sm:p-10"
               onSubmit={(e) => e.preventDefault()}
             >
               <h3 className="text-2xl font-semibold">Converse conosco!</h3>
