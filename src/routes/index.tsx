@@ -136,10 +136,11 @@ function Index() {
       {/* HERO */}
       <section className="relative overflow-hidden">
         <div
-          className="pointer-events-none absolute inset-0 bg-cover bg-center bg-no-repeat"
+          className="pointer-events-none absolute inset-0 bg-cover bg-left bg-no-repeat brightness-150"
           style={{ backgroundImage: `url(${heroBgAsset.url})` }}
         />
-        <div className="pointer-events-none absolute inset-0 bg-[oklch(0.146_0_0_/_0.4)]" />
+        <div className="pointer-events-none absolute inset-0 bg-[oklch(0.146_0_0_/_0.35)]" />
+
         <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(0deg,var(--background)_0%,transparent_35%)]" />
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(90%_60%_at_75%_20%,oklch(0.32_0.03_80/0.35),transparent_60%)]" />
 
