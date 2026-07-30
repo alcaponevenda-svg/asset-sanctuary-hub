@@ -158,9 +158,9 @@ function Index() {
               <img
                 src={heroAsset.url}
                 alt="Dr. Mauro Monção Filho, advogado especialista em proteção patrimonial"
-                width={922}
-                height={1177}
-                className="h-full w-full object-contain object-bottom"
+                width={1024}
+                height={1408}
+                className="h-full w-full object-cover object-top"
               />
               <div className="absolute inset-0 bg-[linear-gradient(90deg,var(--background)_0%,transparent_55%)]" />
               <div className="absolute inset-0 bg-[linear-gradient(0deg,var(--background)_2%,transparent_50%)]" />
