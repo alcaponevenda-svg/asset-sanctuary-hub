@@ -162,7 +162,7 @@ function Index() {
             </div>
           </div>
 
-          <div className="relative animate-fade-in lg:h-[92vh]">
+          <div className="relative animate-fade-in lg:h-[92vh] lg:scale-105">
             <div className="relative h-[420px] overflow-hidden sm:h-[560px] lg:h-full">
               <img
                 src={heroAsset.url}
