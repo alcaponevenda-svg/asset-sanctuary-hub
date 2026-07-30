@@ -214,7 +214,7 @@ function Index() {
       <section id="sobre" className="py-20 lg:py-28">
         <div className="mx-auto grid max-w-7xl items-center gap-14 px-6 lg:grid-cols-2 lg:px-10">
           <Reveal>
-            <div className="relative overflow-hidden rounded-md border border-border bg-card p-6 sm:p-10">
+            <div className="relative overflow-hidden rounded-md p-6 sm:p-10">
               <div className="relative overflow-hidden rounded-md bg-[var(--gradient-gold)] p-2 sm:ml-10">
                 <img
                   src={aboutAsset.url}
