@@ -221,7 +221,7 @@ function Index() {
       {/* SOBRE */}
       <section id="sobre" className="relative overflow-hidden py-20 lg:py-28">
         <div
-          className="pointer-events-none absolute inset-0 bg-[length:35%_auto] bg-right bg-no-repeat opacity-60"
+          className="pointer-events-none absolute inset-0 bg-[length:42%_auto] bg-right bg-no-repeat opacity-70"
           style={{ backgroundImage: `url(${sobreBgAsset.url})` }}
         />
         <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(90deg,var(--background)_20%,transparent_95%)]" />
