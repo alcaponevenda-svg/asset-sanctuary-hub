@@ -287,9 +287,10 @@ function TestimonialCarousel() {
         <div
           className="flex transition-transform duration-700 ease-out"
           style={{
-            transform: `translateX(-${current * (100 / testimonials.length) * itemsPerPage}%)`,
+            transform: `translateX(${translateX})`,
             width: trackWidth,
           }}
+
         >
           {testimonials.map((t) => (
             <div
