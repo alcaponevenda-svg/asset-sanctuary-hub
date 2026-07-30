@@ -16,11 +16,8 @@ import {
   Search,
   FileCheck,
   Shield,
-  ChevronLeft,
-  ChevronRight,
 } from "lucide-react";
 
-import { useState, useEffect } from "react";
 
 import { Reveal } from "@/components/Reveal";
 import heroAsset from "@/assets/mauro-hero-4.png.asset.json";
@@ -148,58 +145,66 @@ const testimonials = [
   {
     name: "Roberto Almeida",
     handle: "@roberto.almeida",
+    role: "Empresário",
+    date: "Março 2025",
     avatar: avatar1,
     text: "O Dr. Mauro cuidou do planejamento sucessório da minha família com uma segurança impressionante. Hoje tenho tranquilidade sabendo que nosso patrimônio está protegido.",
   },
   {
     name: "Fernanda Costa",
     handle: "@fernanda.costa",
+    role: "Médica",
+    date: "Fevereiro 2025",
     avatar: avatar2,
     text: "Profissional extremamente competente e discreto. A holding familiar que estruturou para nós trouxe proteção real e eficiência tributária.",
   },
   {
     name: "Antônio Carvalho",
     handle: "@antonio.carvalho",
+    role: "Produtor Rural",
+    date: "Janeiro 2025",
     avatar: avatar3,
     text: "Conduziu o inventário dos meus pais com maestria, evitando conflitos e reduzindo drasticamente os prazos. Recomendo com total confiança.",
   },
   {
     name: "Patrícia Mendonça",
     handle: "@patricia.mendonca",
+    role: "Sócia-Diretora",
+    date: "Dezembro 2024",
     avatar: avatar4,
     text: "A consultoria em proteção patrimonial mudou a forma como vejo o futuro da minha empresa. Segurança jurídica e muita clareza em cada etapa.",
   },
   {
     name: "Ricardo Fonseca",
     handle: "@ricardo.fonseca",
+    role: "Investidor",
+    date: "Novembro 2024",
     avatar: avatar5,
     text: "Trabalho impecável na estruturação da minha holding familiar. Atendimento personalizado, ágil e com a excelência que eu esperava.",
   },
   {
     name: "Camila Ribeiro",
     handle: "@camila.ribeiro",
+    role: "Arquiteta",
+    date: "Outubro 2024",
     avatar: avatar6,
     text: "Excelência e humanidade em cada detalhe. O Dr. Mauro nos orientou com paciência e segurança durante todo o processo sucessório.",
   },
 ];
 
+
 function TestimonialCard({ t }: { t: (typeof testimonials)[number] }) {
   return (
-    <article className="glass-card h-full rounded-md p-7 transition-all duration-500 hover:-translate-y-1 hover:border-gold/40 hover:shadow-[var(--shadow-premium)]">
+    <article className="glass-card h-full rounded-md p-7 transition-all duration-300 hover:scale-[1.03] hover:border-gold/50 hover:shadow-[var(--shadow-premium)]">
       <div className="flex items-center justify-between">
-        <div className="flex items-center gap-4">
-          <img
-            src={t.avatar.url}
-            alt={t.name}
-            width={48}
-            height={48}
-            loading="lazy"
-            className="h-12 w-12 rounded-full object-cover ring-2 ring-gold/20"
-          />
-          <div>
-            <p className="text-sm font-semibold">{t.name}</p>
-            <p className="text-xs text-muted-foreground">{t.handle}</p>
-          </div>
+        <div className="flex gap-0.5">
+          {[...Array(5)].map((_, idx) => (
+            <Star
+              key={idx}
+              className="h-4 w-4 fill-gold text-gold"
+              strokeWidth={1.5}
+            />
+          ))}
         </div>
         <svg
           className="h-5 w-5 shrink-0"
@@ -227,133 +232,70 @@ function TestimonialCard({ t }: { t: (typeof testimonials)[number] }) {
         </svg>
       </div>
 
-      <div className="mt-4 flex gap-0.5">
-        {[...Array(5)].map((_, idx) => (
-          <Star
-            key={idx}
-            className="h-4 w-4 fill-gold text-gold"
-            strokeWidth={1.5}
-          />
-        ))}
-      </div>
-
-      <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
+      <p className="mt-5 text-sm leading-relaxed text-muted-foreground">
         {t.text}
       </p>
+
+      <div className="mt-6 flex items-center gap-4 border-t border-border pt-5">
+        <img
+          src={t.avatar.url}
+          alt={t.name}
+          width={48}
+          height={48}
+          loading="lazy"
+          className="h-12 w-12 rounded-full object-cover ring-2 ring-gold/20"
+        />
+        <div>
+          <p className="text-sm font-semibold">{t.name}</p>
+          <p className="text-xs text-muted-foreground">
+            {t.role} · {t.date}
+          </p>
+        </div>
+      </div>
     </article>
   );
 }
 
-function TestimonialCarousel() {
-  const [current, setCurrent] = useState(0);
-  const [itemsPerPage, setItemsPerPage] = useState(3);
-
-  useEffect(() => {
-    const update = () => {
-      setItemsPerPage(window.innerWidth >= 1024 ? 3 : window.innerWidth >= 640 ? 2 : 1);
-      setCurrent((prev) => prev);
-    };
-    update();
-    window.addEventListener("resize", update);
-    return () => window.removeEventListener("resize", update);
-  }, []);
-
-  const totalSlides = Math.max(1, Math.ceil(testimonials.length / itemsPerPage));
-
-  useEffect(() => {
-    if (totalSlides <= 1) return;
-    const interval = setInterval(() => {
-      setCurrent((prev) => (prev + 1) % totalSlides);
-    }, 5000);
-    return () => clearInterval(interval);
-  }, [totalSlides]);
-
-  const handlePrev = () => {
-    setCurrent((prev) => (prev === 0 ? totalSlides - 1 : prev - 1));
-  };
-
-  const handleNext = () => {
-    setCurrent((prev) => (prev + 1) % totalSlides);
-  };
-
-  const trackWidth = `${totalSlides * 100}%`;
-  const itemWidth = `${100 / testimonials.length}%`;
-  const translateX = `-${current * (100 / totalSlides)}%`;
-
-
+function MarqueeRow({
+  items,
+  duration,
+  reverse = false,
+}: {
+  items: typeof testimonials;
+  duration: number;
+  reverse?: boolean;
+}) {
+  const loop = [...items, ...items];
   return (
-    <div className="mt-14">
-      <div className="relative overflow-hidden">
-        <div
-          className="flex transition-transform duration-700 ease-out"
-          style={{
-            transform: `translateX(${translateX})`,
-            width: trackWidth,
-          }}
-
-        >
-          {testimonials.map((t) => (
-            <div
-              key={t.name}
-              style={{ width: itemWidth }}
-              className="flex-shrink-0 px-3"
-            >
-              <TestimonialCard t={t} />
-            </div>
-          ))}
-        </div>
-
-        <button
-          onClick={handlePrev}
-          aria-label="Depoimento anterior"
-          className="absolute left-0 top-1/2 z-10 hidden -translate-y-1/2 items-center justify-center rounded-full border border-border bg-background/80 p-3 text-foreground shadow-lg backdrop-blur-sm transition-all hover:border-gold/50 hover:text-gold lg:flex"
-        >
-          <ChevronLeft className="h-5 w-5" />
-        </button>
-        <button
-          onClick={handleNext}
-          aria-label="Próximo depoimento"
-          className="absolute right-0 top-1/2 z-10 hidden -translate-y-1/2 items-center justify-center rounded-full border border-border bg-background/80 p-3 text-foreground shadow-lg backdrop-blur-sm transition-all hover:border-gold/50 hover:text-gold lg:flex"
-        >
-          <ChevronRight className="h-5 w-5" />
-        </button>
-      </div>
-
-      <div className="mt-8 flex items-center justify-center gap-3">
-        <button
-          onClick={handlePrev}
-          aria-label="Depoimento anterior"
-          className="flex h-9 w-9 items-center justify-center rounded-full border border-border bg-background/60 text-foreground transition-colors hover:border-gold/50 hover:text-gold lg:hidden"
-        >
-          <ChevronLeft className="h-4 w-4" />
-        </button>
-
-        <div className="flex gap-2">
-          {Array.from({ length: totalSlides }).map((_, i) => (
-            <button
-              key={i}
-              onClick={() => setCurrent(i)}
-              aria-label={`Ir para slide ${i + 1}`}
-              className={`h-2.5 rounded-full transition-all duration-300 ${
-                i === current
-                  ? "w-6 bg-gold"
-                  : "w-2.5 bg-white/20 hover:bg-white/40"
-              }`}
-            />
-          ))}
-        </div>
-
-        <button
-          onClick={handleNext}
-          aria-label="Próximo depoimento"
-          className="flex h-9 w-9 items-center justify-center rounded-full border border-border bg-background/60 text-foreground transition-colors hover:border-gold/50 hover:text-gold lg:hidden"
-        >
-          <ChevronRight className="h-4 w-4" />
-        </button>
+    <div className="marquee group flex w-max">
+      <div
+        className="marquee-track flex"
+        style={{
+          animationDuration: `${duration}s`,
+          animationDirection: reverse ? "reverse" : "normal",
+        }}
+      >
+        {loop.map((t, i) => (
+          <div
+            key={`${t.name}-${i}`}
+            className="w-[85vw] shrink-0 px-3 sm:w-[46vw] lg:w-[24vw] xl:w-[330px]"
+          >
+            <TestimonialCard t={t} />
+          </div>
+        ))}
       </div>
     </div>
   );
 }
+
+function TestimonialMarquee() {
+  return (
+    <div className="marquee-mask relative mt-14 overflow-hidden">
+      <MarqueeRow items={testimonials} duration={38} />
+    </div>
+  );
+}
+
 
 const steps = [
   {
@@ -482,11 +424,16 @@ function Index() {
           <Reveal className="text-center">
             <Pill>Depoimentos</Pill>
             <h2 className="mx-auto mt-6 max-w-2xl text-3xl font-semibold tracking-tight text-balance sm:text-4xl">
-              O que nossos clientes falam sobre nós:
+              Clientes que confiaram no nosso trabalho
             </h2>
+            <p className="mx-auto mt-4 max-w-xl text-sm leading-relaxed text-muted-foreground sm:text-base">
+              Veja o que nossos clientes dizem sobre a experiência e os
+              resultados obtidos.
+            </p>
+
           </Reveal>
 
-          <TestimonialCarousel />
+          <TestimonialMarquee />
 
           <div className="mt-10 flex justify-center">
             <GoldButton>Agendar Consultoria</GoldButton>
