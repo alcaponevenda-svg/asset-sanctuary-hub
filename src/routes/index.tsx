@@ -63,27 +63,6 @@ export const Route = createFileRoute("/")({
 
 const CTA_HREF = "#contato";
 
-function Logo() {
-  return (
-    <a href="#topo" className="flex items-center gap-3" aria-label="Página inicial">
-      <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-sm border border-gold/50 text-sm font-semibold tracking-[0.12em] text-gold">
-        MM
-      </span>
-      <span className="flex flex-col border-l border-border pl-3 leading-tight">
-        <span className="text-sm font-semibold tracking-[0.22em] uppercase">
-          Mauro
-        </span>
-        <span className="text-sm font-semibold tracking-[0.22em] uppercase">
-          Monção
-        </span>
-        <span className="text-[8px] tracking-[0.3em] uppercase text-muted-foreground">
-          Advocacia Patrimonial
-        </span>
-      </span>
-    </a>
-  );
-}
-
 function GoldButton({
   className = "",
   href = CTA_HREF,
@@ -344,8 +323,7 @@ function Index() {
 
         <div className="relative mx-auto grid max-w-7xl items-center gap-10 px-6 pt-10 pb-20 lg:min-h-[92vh] lg:grid-cols-2 lg:px-10 lg:pt-0 lg:pb-0">
           <div className="animate-fade-up">
-            <Logo />
-            <h1 className="mt-10 text-4xl leading-[1.1] font-semibold tracking-tight text-balance sm:text-5xl">
+            <h1 className="text-4xl leading-[1.1] font-semibold tracking-tight text-balance sm:text-5xl">
               <span className="text-gradient-gold">Advogado Patrimonial</span>
               <br />
               especializado na proteção
@@ -666,9 +644,7 @@ function Index() {
 
       {/* RODAPÉ */}
       <footer className="mt-10 border-t border-border bg-card/60 py-14">
-        <div className="mx-auto grid max-w-7xl gap-10 px-6 lg:grid-cols-3 lg:px-10">
-          <Logo />
-
+        <div className="mx-auto grid max-w-7xl gap-10 px-6 lg:grid-cols-2 lg:px-10">
           <div className="space-y-3 text-sm text-muted-foreground">
             <p className="flex items-center gap-3">
               <Mail className="h-4 w-4 shrink-0 text-gold" />
