@@ -134,19 +134,19 @@ function Index() {
   return (
     <div id="topo" className="min-h-screen bg-background text-foreground">
       {/* HERO */}
-      <section className="relative min-h-[92vh] overflow-hidden">
+      <section className="relative overflow-hidden">
         <div
           className="pointer-events-none absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{ backgroundImage: `url(${heroBgAsset.url})` }}
         />
-        <div className="pointer-events-none absolute inset-0 bg-[oklch(0.146_0_0_/_0.55)]" />
-        <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(90deg,var(--background)_0%,transparent_50%)]" />
+        <div className="pointer-events-none absolute inset-0 bg-[oklch(0.146_0_0_/_0.45)]" />
         <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(0deg,var(--background)_0%,transparent_35%)]" />
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(90%_60%_at_75%_20%,oklch(0.32_0.03_80/0.35),transparent_60%)]" />
 
-        <div className="relative mx-auto flex max-w-7xl items-center px-6 pt-10 pb-20 lg:min-h-[92vh] lg:px-10 lg:pt-0 lg:pb-0">
-          <div className="animate-fade-up max-w-2xl">
+        <div className="relative mx-auto grid max-w-7xl items-center gap-10 px-6 pt-10 pb-20 lg:min-h-[92vh] lg:grid-cols-2 lg:px-10 lg:pt-0 lg:pb-0">
+          <div className="animate-fade-up">
             <Logo />
-            <h1 className="mt-10 text-4xl leading-[1.1] font-semibold tracking-tight text-balance sm:text-5xl lg:text-6xl">
+            <h1 className="mt-10 text-4xl leading-[1.1] font-semibold tracking-tight text-balance sm:text-5xl">
               <span className="text-gradient-gold">Advogado Patrimonial</span>
               <br />
               especializado na proteção
@@ -162,16 +162,17 @@ function Index() {
             </div>
           </div>
 
-          <div className="pointer-events-none absolute bottom-0 right-0 top-0 w-[55%] animate-fade-in lg:w-[50%]">
-            <img
-              src={heroAsset.url}
-              alt="Dr. Mauro Monção Filho, advogado especialista em proteção patrimonial"
-              width={1024}
-              height={1408}
-              className="h-full w-full object-contain object-bottom"
-            />
-            <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(90deg,var(--background)_0%,transparent_45%)]" />
-            <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(0deg,var(--background)_0%,transparent_50%)]" />
+          <div className="relative animate-fade-in lg:h-[92vh]">
+            <div className="relative h-[420px] overflow-hidden sm:h-[560px] lg:h-full">
+              <img
+                src={heroAsset.url}
+                alt="Dr. Mauro Monção Filho, advogado especialista em proteção patrimonial"
+                width={1024}
+                height={1408}
+                className="h-full w-full object-cover object-top"
+              />
+              <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(0deg,var(--background)_2%,transparent_40%)]" />
+            </div>
           </div>
         </div>
       </section>
