@@ -243,7 +243,12 @@
     opacity: 1;
     animation: none !important;
   }
+
+  .marquee-track {
+    animation: none !important;
+  }
 }
+
 
 
 /* NEXUS-PRO:WATERMARK-HIDE:START */
