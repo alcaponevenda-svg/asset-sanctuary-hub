@@ -15,7 +15,7 @@ import {
 
 import { Reveal } from "@/components/Reveal";
 import heroAsset from "@/assets/mauro-hero-4.png.asset.json";
-import aboutLawyer from "@/assets/about-lawyer.jpg";
+import aboutAsset from "@/assets/mauro-sobre.png.asset.json";
 import areaInventario from "@/assets/area-inventario.jpg";
 
 export const Route = createFileRoute("/")({
@@ -226,7 +226,7 @@ function Index() {
               </div>
               <div className="relative overflow-hidden rounded-md bg-[var(--gradient-gold)] p-2 sm:ml-10">
                 <img
-                  src={aboutLawyer}
+                  src={aboutAsset.url}
                   alt="Retrato do Dr. Mauro Monção Filho"
                   loading="lazy"
                   width={1024}
