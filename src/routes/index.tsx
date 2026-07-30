@@ -315,7 +315,7 @@ const steps = [
 
 
 const fieldClass =
-  "w-full rounded-md border border-input bg-background/60 px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground/60 outline-none transition-colors focus:border-gold/60";
+  "field-premium w-full rounded-md border border-input bg-background/60 px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground/60 outline-none";
 
 
 function Index() {
