@@ -529,30 +529,37 @@ function Index() {
       </section>
 
       {/* CONTATO */}
-      <section id="contato" className="py-16 sm:py-20 lg:py-28">
-        <div className="mx-auto grid max-w-7xl items-center gap-10 px-6 sm:gap-14 lg:grid-cols-2 lg:px-10">
-          <Reveal>
-            <h2 className="text-3xl font-semibold tracking-tight text-balance sm:text-4xl">
-              Como <span className="text-gradient-gold">podemos ajudar</span> a
-              proteger seu patrimônio?
-            </h2>
-            <p className="mt-5 max-w-md text-sm leading-relaxed text-muted-foreground">
-              Para informações ou contato com nossa equipe, utilize o formulário
-              ao lado, especificando o tipo de solicitação. Retornaremos o mais
-              breve possível.
-            </p>
-            <div className="relative mt-10 overflow-hidden rounded-md">
-              <img
-                src={areaInventario}
-                alt="Escritório de advocacia"
-                loading="lazy"
-                className="h-64 w-full object-cover"
-              />
-              <div className="absolute inset-0 bg-[var(--gradient-fade)]" />
-            </div>
-          </Reveal>
+      <section id="contato" className="relative py-16 sm:py-20 lg:py-28">
+        <div className="contact-glow absolute inset-0" aria-hidden="true" />
+        <div className="relative mx-auto grid max-w-7xl items-center gap-10 px-6 sm:gap-14 lg:grid-cols-2 lg:px-10">
+          <div>
+            <Reveal className="reveal-left">
+              <h2 className="text-3xl font-semibold tracking-tight text-balance sm:text-4xl">
+                Como <span className="text-gradient-gold">podemos ajudar</span> a
+                proteger seu patrimônio?
+              </h2>
+            </Reveal>
+            <Reveal className="reveal-left" delay={120}>
+              <p className="mt-5 max-w-md text-sm leading-relaxed text-muted-foreground">
+                Para informações ou contato com nossa equipe, utilize o
+                formulário ao lado, especificando o tipo de solicitação.
+                Retornaremos o mais breve possível.
+              </p>
+            </Reveal>
+            <Reveal className="reveal-left" delay={240}>
+              <div className="contact-img relative mt-10 overflow-hidden rounded-md">
+                <img
+                  src={areaInventario}
+                  alt="Escritório de advocacia"
+                  loading="lazy"
+                  className="h-64 w-full object-cover"
+                />
+                <div className="absolute inset-0 bg-[var(--gradient-fade)]" />
+              </div>
+            </Reveal>
+          </div>
 
-          <Reveal delay={120}>
+          <Reveal className="reveal-right" delay={360}>
             <form
               className="glass-card rounded-md p-6 sm:p-10"
               onSubmit={(e) => e.preventDefault()}
@@ -564,7 +571,10 @@ function Index() {
               </p>
 
               <div className="mt-7 space-y-5">
-                <div>
+                <div
+                  className="contact-field"
+                  style={{ animationDelay: "460ms" }}
+                >
                   <label className="text-xs font-medium" htmlFor="nome">
                     Nome Completo*
                   </label>
@@ -577,7 +587,10 @@ function Index() {
                 </div>
 
                 <div className="grid gap-5 sm:grid-cols-2">
-                  <div>
+                  <div
+                    className="contact-field"
+                    style={{ animationDelay: "530ms" }}
+                  >
                     <label className="text-xs font-medium" htmlFor="tel">
                       Telefone/WhatsApp*
                     </label>
@@ -588,7 +601,10 @@ function Index() {
                       className={`mt-2 ${fieldClass}`}
                     />
                   </div>
-                  <div>
+                  <div
+                    className="contact-field"
+                    style={{ animationDelay: "600ms" }}
+                  >
                     <label className="text-xs font-medium" htmlFor="email">
                       E-mail*
                     </label>
@@ -602,7 +618,10 @@ function Index() {
                   </div>
                 </div>
 
-                <div>
+                <div
+                  className="contact-field"
+                  style={{ animationDelay: "670ms" }}
+                >
                   <label className="text-xs font-medium" htmlFor="assunto">
                     Assunto*
                   </label>
@@ -614,7 +633,10 @@ function Index() {
                   </select>
                 </div>
 
-                <div>
+                <div
+                  className="contact-field"
+                  style={{ animationDelay: "740ms" }}
+                >
                   <label className="text-xs font-medium" htmlFor="mensagem">
                     Mensagem*
                   </label>
@@ -627,12 +649,17 @@ function Index() {
                   />
                 </div>
 
-                <button
-                  type="submit"
-                  className="w-full rounded-full bg-[var(--gradient-gold)] py-4 text-sm font-medium text-background transition-all duration-500 hover:brightness-110"
+                <div
+                  className="contact-field"
+                  style={{ animationDelay: "810ms" }}
                 >
-                  Enviar mensagem
-                </button>
+                  <button
+                    type="submit"
+                    className="contact-submit w-full rounded-full bg-[var(--gradient-gold)] py-4 text-sm font-medium text-background hover:brightness-110"
+                  >
+                    Enviar mensagem
+                  </button>
+                </div>
               </div>
             </form>
           </Reveal>
