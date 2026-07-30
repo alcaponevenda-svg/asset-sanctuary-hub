@@ -11,6 +11,11 @@ import {
   Instagram,
   Linkedin,
   Facebook,
+  Star,
+  CalendarCheck,
+  Search,
+  FileCheck,
+  Shield,
 } from "lucide-react";
 
 import { Reveal } from "@/components/Reveal";
@@ -19,6 +24,10 @@ import heroBgAsset from "@/assets/hero-bg.png.asset.json";
 import sobreBgAsset from "@/assets/sobre-bg-2.png.asset.json";
 import aboutAsset from "@/assets/mauro-sobre-2.png.asset.json";
 import areaInventario from "@/assets/area-inventario.jpg";
+import avatar1 from "@/assets/avatar-1.jpg.asset.json";
+import avatar2 from "@/assets/avatar-2.jpg.asset.json";
+import avatar3 from "@/assets/avatar-3.jpg.asset.json";
+
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -127,8 +136,57 @@ const stats = [
   { value: "+1000", label: "Processos Conduzidos" },
 ];
 
+const testimonials = [
+  {
+    name: "Roberto Almeida",
+    handle: "@roberto.almeida",
+    avatar: avatar1,
+    text: "O Dr. Mauro cuidou do planejamento sucessório da minha família com uma segurança impressionante. Hoje tenho tranquilidade sabendo que nosso patrimônio está protegido.",
+  },
+  {
+    name: "Fernanda Costa",
+    handle: "@fernanda.costa",
+    avatar: avatar2,
+    text: "Profissional extremamente competente e discreto. A holding familiar que estruturou para nós trouxe proteção real e eficiência tributária.",
+  },
+  {
+    name: "Antônio Carvalho",
+    handle: "@antonio.carvalho",
+    avatar: avatar3,
+    text: "Conduziu o inventário dos meus pais com maestria, evitando conflitos e reduzindo drasticamente os prazos. Recomendo com total confiança.",
+  },
+];
+
+const steps = [
+  {
+    number: "01",
+    icon: CalendarCheck,
+    title: "Agendamento da Consultoria",
+    text: "Conversamos sobre sua situação, objetivos e necessidades patrimoniais de forma reservada e personalizada.",
+  },
+  {
+    number: "02",
+    icon: Search,
+    title: "Análise Detalhada do Patrimônio",
+    text: "Mapeamos bens, riscos e oportunidades para entender o cenário jurídico completo da sua família ou empresa.",
+  },
+  {
+    number: "03",
+    icon: FileCheck,
+    title: "Elaboração da Estratégia Jurídica",
+    text: "Desenhamos a solução mais adequada: holding, planejamento sucessório, proteção de bens ou inventário.",
+  },
+  {
+    number: "04",
+    icon: Shield,
+    title: "Implementação e Acompanhamento",
+    text: "Colocamos a estratégia em prática com acompanhamento especializado em todas as etapas legais.",
+  },
+];
+
 const fieldClass =
   "w-full rounded-md border border-input bg-background/60 px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground/60 outline-none transition-colors focus:border-gold/60";
+
 
 function Index() {
   return (
@@ -218,8 +276,142 @@ function Index() {
         </div>
       </section>
 
+      {/* DEPOIMENTOS */}
+      <section id="depoimentos" className="relative overflow-hidden py-24 lg:py-32">
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(60%_50%_at_50%_0%,oklch(0.32_0.03_80/0.15),transparent_70%)]" />
+        <div className="relative mx-auto max-w-7xl px-6 lg:px-10">
+          <Reveal className="text-center">
+            <Pill>Depoimentos</Pill>
+            <h2 className="mx-auto mt-6 max-w-2xl text-3xl font-semibold tracking-tight text-balance sm:text-4xl">
+              O que nossos clientes falam sobre nós:
+            </h2>
+          </Reveal>
+
+          <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {testimonials.map((t, i) => (
+              <Reveal key={t.name} delay={i * 90}>
+                <article className="glass-card h-full rounded-md p-7 transition-all duration-500 hover:-translate-y-1 hover:border-gold/40 hover:shadow-[var(--shadow-premium)]">
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-4">
+                      <img
+                        src={t.avatar.url}
+                        alt={t.name}
+                        width={48}
+                        height={48}
+                        loading="lazy"
+                        className="h-12 w-12 rounded-full object-cover ring-2 ring-gold/20"
+                      />
+                      <div>
+                        <p className="text-sm font-semibold">{t.name}</p>
+                        <p className="text-xs text-muted-foreground">{t.handle}</p>
+                      </div>
+                    </div>
+                    <svg
+                      className="h-5 w-5 shrink-0"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      aria-label="Google"
+                    >
+                      <path
+                        d="M23.5 12.28c0-.86-.08-1.68-.22-2.47H12v4.68h6.45c-.28 1.48-1.12 2.73-2.38 3.57v2.97h3.85c2.25-2.08 3.55-5.14 3.55-8.75z"
+                        fill="#4285F4"
+                      />
+                      <path
+                        d="M12 24c3.24 0 5.96-1.08 7.94-2.91l-3.85-2.97c-1.07.72-2.44 1.14-4.09 1.14-3.15 0-5.82-2.13-6.77-4.99H1.45v3.07C3.42 21.3 7.4 24 12 24z"
+                        fill="#34A853"
+                      />
+                      <path
+                        d="M5.23 14.27c-.24-.72-.38-1.49-.38-2.27s.14-1.55.38-2.27V6.66H1.45C.53 8.46 0 10.48 0 12.5c0 2.02.53 4.04 1.45 5.84l3.78-3.07z"
+                        fill="#FBBC05"
+                      />
+                      <path
+                        d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.45-3.45C17.95 1.19 15.23 0 12 0 7.4 0 3.42 2.7 1.45 6.66l3.78 3.07c.95-2.86 3.62-4.98 6.77-4.98z"
+                        fill="#EA4335"
+                      />
+                    </svg>
+                  </div>
+
+                  <div className="mt-4 flex gap-0.5">
+                    {[...Array(5)].map((_, idx) => (
+                      <Star
+                        key={idx}
+                        className="h-4 w-4 fill-gold text-gold"
+                        strokeWidth={1.5}
+                      />
+                    ))}
+                  </div>
+
+                  <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
+                    {t.text}
+                  </p>
+                </article>
+              </Reveal>
+            ))}
+          </div>
+
+          <div className="mt-10 flex justify-center gap-2">
+            {[0, 1, 2, 3, 4].map((i) => (
+              <span
+                key={i}
+                className={`h-2 w-2 rounded-full ${i === 1 ? "bg-gold" : "bg-white/20"}`}
+              />
+            ))}
+          </div>
+
+          <div className="mt-10 flex justify-center">
+            <GoldButton>Agendar Consultoria</GoldButton>
+          </div>
+        </div>
+      </section>
+
+      {/* JORNADA PASSO A PASSO */}
+      <section className="section-light py-24 lg:py-32">
+        <div className="mx-auto max-w-7xl px-6 lg:px-10">
+          <div className="grid gap-10 lg:grid-cols-2 lg:items-end">
+            <Reveal>
+              <Pill>Como Funciona</Pill>
+              <h2 className="mt-6 text-3xl font-semibold tracking-tight text-balance sm:text-4xl">
+                Sua Jornada Patrimonial,{" "}
+                <span className="text-gradient-gold">PASSO A PASSO!</span>
+              </h2>
+            </Reveal>
+            <Reveal delay={100}>
+              <p className="max-w-md text-sm leading-relaxed text-muted-foreground lg:ml-auto">
+                Desde o primeiro contato, nos dedicamos a esclarecer e estruturar o
+                seu cenário patrimonial, garantindo a melhor estratégia de proteção
+                em todas as fases jurídicas.
+              </p>
+            </Reveal>
+          </div>
+
+          <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {steps.map((step, i) => (
+              <Reveal key={step.number} delay={i * 90}>
+                <article className="glass-card group h-full rounded-md p-7 transition-all duration-500 hover:-translate-y-1 hover:border-gold/40 hover:shadow-[var(--shadow-premium)]">
+                  <span className="flex h-11 w-11 items-center justify-center rounded-md bg-[var(--gradient-gold)]">
+                    <step.icon
+                      className="h-5 w-5 text-background"
+                      strokeWidth={1.8}
+                    />
+                  </span>
+                  <p className="mt-5 text-xs font-semibold tracking-[0.12em] text-muted-foreground uppercase">
+                    Etapa {step.number}
+                  </p>
+                  <h3 className="mt-2 text-base font-semibold">{step.title}</h3>
+                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                    {step.text}
+                  </p>
+                </article>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* SOBRE */}
       <section id="sobre" className="relative overflow-hidden py-28 lg:py-40">
+
         <div
           className="pointer-events-none absolute inset-0 bg-cover bg-right opacity-60"
           style={{ backgroundImage: `url(${sobreBgAsset.url})` }}
