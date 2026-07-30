@@ -20,6 +20,12 @@ import {
 
 
 import { Reveal } from "@/components/Reveal";
+import {
+  AnimatedWords,
+  DustParticles,
+  MouseGlow,
+  StatCard,
+} from "@/components/AboutEffects";
 import { AreaCard } from "@/components/AreaCard";
 import heroAsset from "@/assets/mauro-hero-4.png.asset.json";
 import heroBgAsset from "@/assets/hero-bg.png.asset.json";
