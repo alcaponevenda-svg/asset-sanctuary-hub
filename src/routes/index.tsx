@@ -468,6 +468,7 @@ function Index() {
           className="pointer-events-none absolute inset-0 bg-cover bg-right opacity-60"
           style={{ backgroundImage: `url(${sobreBgAsset.url})` }}
         />
+        <div className="pointer-events-none absolute inset-0 bg-background/70 lg:hidden" />
         <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(90deg,var(--background)_0%,transparent_70%)]" />
         <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(0deg,var(--background)_0%,transparent_45%)]" />
         <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,var(--background)_0%,transparent_30%)]" />
