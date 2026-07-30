@@ -16,7 +16,11 @@ import {
   Search,
   FileCheck,
   Shield,
+  ChevronLeft,
+  ChevronRight,
 } from "lucide-react";
+
+import { useState, useEffect } from "react";
 
 import { Reveal } from "@/components/Reveal";
 import heroAsset from "@/assets/mauro-hero-4.png.asset.json";
@@ -27,6 +31,10 @@ import areaInventario from "@/assets/area-inventario.jpg";
 import avatar1 from "@/assets/avatar-1.jpg.asset.json";
 import avatar2 from "@/assets/avatar-2.jpg.asset.json";
 import avatar3 from "@/assets/avatar-3.jpg.asset.json";
+import avatar4 from "@/assets/avatar-4.jpg.asset.json";
+import avatar5 from "@/assets/avatar-5.jpg.asset.json";
+import avatar6 from "@/assets/avatar-6.jpg.asset.json";
+
 
 
 export const Route = createFileRoute("/")({
