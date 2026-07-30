@@ -75,7 +75,7 @@ function GoldButton({
   variant?: "solid" | "outline";
 }) {
   const base =
-    "group inline-flex items-center justify-center gap-3 rounded-full px-8 py-4 text-sm font-medium transition-all duration-500 hover:-translate-y-0.5";
+    "group inline-flex w-full sm:w-auto items-center justify-center gap-3 rounded-full px-6 sm:px-8 py-3.5 sm:py-4 text-sm font-medium transition-all duration-500 hover:-translate-y-0.5";
   const styles =
     variant === "solid"
       ? "text-background shadow-[var(--shadow-gold)] hover:brightness-110"
