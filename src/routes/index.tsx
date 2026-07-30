@@ -16,6 +16,7 @@ import {
 import { Reveal } from "@/components/Reveal";
 import heroAsset from "@/assets/mauro-hero-4.png.asset.json";
 import heroBgAsset from "@/assets/hero-bg.png.asset.json";
+import sobreBgAsset from "@/assets/sobre-bg.png.asset.json";
 import aboutAsset from "@/assets/mauro-sobre.png.asset.json";
 import areaInventario from "@/assets/area-inventario.jpg";
 
@@ -218,8 +219,14 @@ function Index() {
       </section>
 
       {/* SOBRE */}
-      <section id="sobre" className="py-20 lg:py-28">
-        <div className="mx-auto grid max-w-7xl items-center gap-14 px-6 lg:grid-cols-2 lg:px-10">
+      <section id="sobre" className="relative overflow-hidden py-20 lg:py-28">
+        <div
+          className="pointer-events-none absolute inset-0 bg-cover bg-center opacity-60"
+          style={{ backgroundImage: `url(${sobreBgAsset.url})` }}
+        />
+        <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(90deg,var(--background)_0%,transparent_75%)]" />
+        <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(0deg,var(--background)_0%,transparent_50%)]" />
+        <div className="relative mx-auto grid max-w-7xl items-center gap-14 px-6 lg:grid-cols-2 lg:px-10">
           <Reveal>
             <div className="relative overflow-hidden rounded-md p-6 sm:p-10">
               <div className="relative overflow-hidden rounded-md bg-[var(--gradient-gold)] p-2 sm:ml-10">
