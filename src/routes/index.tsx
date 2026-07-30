@@ -482,8 +482,13 @@ function Index() {
           <Reveal className="text-center">
             <Pill>Depoimentos</Pill>
             <h2 className="mx-auto mt-6 max-w-2xl text-3xl font-semibold tracking-tight text-balance sm:text-4xl">
-              O que nossos clientes falam sobre nós:
+              Clientes que confiaram no nosso trabalho
             </h2>
+            <p className="mx-auto mt-4 max-w-xl text-sm leading-relaxed text-muted-foreground sm:text-base">
+              Veja o que nossos clientes dizem sobre a experiência e os
+              resultados obtidos.
+            </p>
+
           </Reveal>
 
           <TestimonialCarousel />
