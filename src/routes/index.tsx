@@ -436,7 +436,7 @@ function Index() {
 
           </Reveal>
 
-          <TestimonialCarousel />
+          <TestimonialMarquee />
 
           <div className="mt-10 flex justify-center">
             <GoldButton>Agendar Consultoria</GoldButton>
