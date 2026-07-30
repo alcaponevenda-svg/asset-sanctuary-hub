@@ -136,8 +136,57 @@ const stats = [
   { value: "+1000", label: "Processos Conduzidos" },
 ];
 
+const testimonials = [
+  {
+    name: "Roberto Almeida",
+    handle: "@roberto.almeida",
+    avatar: avatar1,
+    text: "O Dr. Mauro cuidou do planejamento sucessório da minha família com uma segurança impressionante. Hoje tenho tranquilidade sabendo que nosso patrimônio está protegido.",
+  },
+  {
+    name: "Fernanda Costa",
+    handle: "@fernanda.costa",
+    avatar: avatar2,
+    text: "Profissional extremamente competente e discreto. A holding familiar que estruturou para nós trouxe proteção real e eficiência tributária.",
+  },
+  {
+    name: "Antônio Carvalho",
+    handle: "@antonio.carvalho",
+    avatar: avatar3,
+    text: "Conduziu o inventário dos meus pais com maestria, evitando conflitos e reduzindo drasticamente os prazos. Recomendo com total confiança.",
+  },
+];
+
+const steps = [
+  {
+    number: "01",
+    icon: CalendarCheck,
+    title: "Agendamento da Consultoria",
+    text: "Conversamos sobre sua situação, objetivos e necessidades patrimoniais de forma reservada e personalizada.",
+  },
+  {
+    number: "02",
+    icon: Search,
+    title: "Análise Detalhada do Patrimônio",
+    text: "Mapeamos bens, riscos e oportunidades para entender o cenário jurídico completo da sua família ou empresa.",
+  },
+  {
+    number: "03",
+    icon: FileCheck,
+    title: "Elaboração da Estratégia Jurídica",
+    text: "Desenhamos a solução mais adequada: holding, planejamento sucessório, proteção de bens ou inventário.",
+  },
+  {
+    number: "04",
+    icon: Shield,
+    title: "Implementação e Acompanhamento",
+    text: "Colocamos a estratégia em prática com acompanhamento especializado em todas as etapas legais.",
+  },
+];
+
 const fieldClass =
   "w-full rounded-md border border-input bg-background/60 px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground/60 outline-none transition-colors focus:border-gold/60";
+
 
 function Index() {
   return (
