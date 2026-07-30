@@ -20,6 +20,12 @@ import {
 
 
 import { Reveal } from "@/components/Reveal";
+import {
+  AnimatedWords,
+  DustParticles,
+  MouseGlow,
+  StatCard,
+} from "@/components/AboutEffects";
 import { AreaCard } from "@/components/AreaCard";
 import heroAsset from "@/assets/mauro-hero-4.png.asset.json";
 import heroBgAsset from "@/assets/hero-bg.png.asset.json";
@@ -471,10 +477,14 @@ function Index() {
         <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(90deg,var(--background)_0%,transparent_70%)]" />
         <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(0deg,var(--background)_0%,transparent_45%)]" />
         <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,var(--background)_0%,transparent_30%)]" />
+        <DustParticles />
+        <MouseGlow />
         <div className="relative mx-auto grid max-w-7xl items-center gap-10 px-6 lg:grid-cols-[1.2fr_1.5fr] lg:gap-20 lg:px-10">
-          <Reveal>
-            <div className="relative overflow-hidden rounded-md sm:p-10 lg:p-6">
-              <div className="relative overflow-hidden rounded-md bg-[var(--gradient-gold)] p-1.5 sm:p-2">
+          <Reveal className="about-left">
+            <div className="about-photo-wrap relative overflow-hidden rounded-md sm:p-10 lg:p-6">
+              <div className="about-photo-halo absolute inset-0" aria-hidden="true" />
+              <div className="about-shoulder-light absolute inset-0" aria-hidden="true" />
+              <div className="about-photo relative overflow-hidden rounded-md bg-[var(--gradient-gold)] p-1.5 sm:p-2">
                 <img
                   src={aboutAsset.url}
                   alt="Retrato do Dr. Mauro Monção Filho"
@@ -488,41 +498,64 @@ function Index() {
             </div>
           </Reveal>
 
-          <Reveal delay={120}>
-            <h2 className="text-3xl font-semibold tracking-tight text-balance sm:text-4xl lg:text-5xl">
-              Quem é{" "}
-              <span className="text-gradient-gold">Dr. Mauro Monção Filho</span>
-            </h2>
-            <p className="mt-6 text-base leading-relaxed text-muted-foreground">
-              Advogado especialista em Proteção Patrimonial, Planejamento
-              Sucessório e Inventários. Atua auxiliando famílias e empresários na
-              preservação de patrimônios, com soluções jurídicas personalizadas,
-              segurança e discrição.
-            </p>
-            <p className="mt-4 text-base leading-relaxed text-muted-foreground">
-              Com ampla experiência em estruturas patrimoniais e sucessões, é
-              reconhecido pela abordagem estratégica e humanizada, atendendo
-              clientes em todo o território nacional com excelência técnica.
-            </p>
+          <Reveal className="about-right" delay={120}>
+            <div className="relative">
+              <div className="about-text-glow absolute inset-0" aria-hidden="true" />
+              <div className="relative">
+                <h2 className="text-3xl font-semibold tracking-tight text-balance sm:text-4xl lg:text-5xl">
+                  <AnimatedWords text="Quem é" startDelay={100} />
+                  <AnimatedWords
+                    text="Dr. Mauro Monção Filho"
+                    startDelay={220}
+                    className="text-gradient-gold"
+                  />
+                </h2>
+                <p className="mt-6 text-base leading-relaxed text-muted-foreground">
+                  <span
+                    className="about-line"
+                    style={{ animationDelay: "520ms" }}
+                  >
+                    Advogado especialista em Proteção Patrimonial, Planejamento
+                    Sucessório e Inventários. Atua auxiliando famílias e
+                    empresários na preservação de patrimônios, com soluções
+                    jurídicas personalizadas, segurança e discrição.
+                  </span>
+                </p>
+                <p className="mt-4 text-base leading-relaxed text-muted-foreground">
+                  <span
+                    className="about-line"
+                    style={{ animationDelay: "600ms" }}
+                  >
+                    Com ampla experiência em estruturas patrimoniais e sucessões,
+                    é reconhecido pela abordagem estratégica e humanizada,
+                    atendendo clientes em todo o território nacional com
+                    excelência técnica.
+                  </span>
+                </p>
 
-            <div className="mt-10 grid grid-cols-3 gap-3 sm:gap-5">
-              {stats.map((stat) => (
-                <div
-                  key={stat.label}
-                  className="rounded-md border border-border bg-card px-2 py-5 text-center sm:px-4 sm:py-6"
-                >
-                  <p className="text-xl font-semibold text-gold sm:text-3xl">
-                    {stat.value}
-                  </p>
-                  <p className="mt-1 text-[11px] leading-tight text-muted-foreground sm:text-xs">
-                    {stat.label}
-                  </p>
+                <div className="relative mt-10">
+                  <div
+                    className="about-stats-glow absolute inset-0"
+                    aria-hidden="true"
+                  />
+                  <div className="relative grid grid-cols-3 gap-3 sm:gap-5">
+                    {stats.map((stat, i) => (
+                      <StatCard
+                        key={stat.label}
+                        value={stat.value}
+                        label={stat.label}
+                        index={i}
+                      />
+                    ))}
+                  </div>
                 </div>
-              ))}
-            </div>
 
-            <div className="mt-10">
-              <GoldButton>Falar com advogado</GoldButton>
+                <div className="mt-10">
+                  <GoldButton className="about-cta">
+                    Falar com advogado
+                  </GoldButton>
+                </div>
+              </div>
             </div>
           </Reveal>
         </div>
