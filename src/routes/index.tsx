@@ -67,15 +67,24 @@ function GoldButton({
   className = "",
   href = CTA_HREF,
   children,
+  variant = "solid",
 }: {
   className?: string;
   href?: string;
   children: React.ReactNode;
+  variant?: "solid" | "outline";
 }) {
+  const base =
+    "group inline-flex items-center justify-center gap-3 rounded-full px-8 py-4 text-sm font-medium transition-all duration-500 hover:-translate-y-0.5";
+  const styles =
+    variant === "solid"
+      ? "text-background shadow-[var(--shadow-gold)] hover:brightness-110"
+      : "border border-gold/60 bg-transparent text-gold hover:border-gold hover:bg-gold hover:text-background";
   return (
     <a
       href={href}
-      className={`group inline-flex items-center justify-center gap-3 rounded-full bg-[var(--gradient-gold)] px-8 py-4 text-sm font-medium text-background shadow-[var(--shadow-gold)] transition-all duration-500 hover:-translate-y-0.5 hover:brightness-110 ${className}`}
+      className={`${base} ${styles} ${className}`}
+      style={variant === "solid" ? { background: "var(--gradient-gold)" } : undefined}
     >
       {children}
       <ArrowRight className="h-4 w-4 transition-transform duration-500 group-hover:translate-x-1" />
@@ -335,7 +344,7 @@ function Index() {
               familiar, inventários e planejamento sucessório — em todo o Brasil.
             </p>
             <div className="mt-9">
-              <GoldButton>Falar com advogado</GoldButton>
+              <GoldButton>Agendar Consultoria</GoldButton>
             </div>
           </div>
 
