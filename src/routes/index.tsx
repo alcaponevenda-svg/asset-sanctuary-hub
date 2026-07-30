@@ -339,8 +339,9 @@ function Index() {
               Atuação técnica e estratégica em proteção patrimonial, holding
               familiar, inventários e planejamento sucessório — em todo o Brasil.
             </p>
-            <div className="mt-9">
+            <div className="mt-9 flex flex-wrap items-center gap-4">
               <GoldButton>Falar com advogado</GoldButton>
+              <GoldButton variant="outline">Agendar Consultoria</GoldButton>
             </div>
           </div>
 
