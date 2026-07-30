@@ -553,7 +553,6 @@ function Index() {
             </div>
           </Reveal>
         </div>
-        </div>
       </section>
 
       {/* CONTATO */}
