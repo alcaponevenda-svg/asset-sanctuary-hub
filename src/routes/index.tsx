@@ -3,23 +3,20 @@ import {
   ShieldCheck,
   Building2,
   Scale,
-  Users,
-  MapPin,
-  Sparkles,
-  Lock,
-  HeartHandshake,
-  GraduationCap,
+  FileText,
   ArrowRight,
-  Check,
+  Mail,
+  Phone,
+  MapPin,
+  Instagram,
+  Linkedin,
+  Facebook,
 } from "lucide-react";
 
 import { Reveal } from "@/components/Reveal";
 import heroLawyer from "@/assets/hero-lawyer.jpg";
 import aboutLawyer from "@/assets/about-lawyer.jpg";
-import areaPatrimonial from "@/assets/area-patrimonial.jpg";
 import areaInventario from "@/assets/area-inventario.jpg";
-import areaHolding from "@/assets/area-holding.jpg";
-import areaSucessorio from "@/assets/area-sucessorio.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -53,14 +50,17 @@ const CTA_HREF = "#contato";
 function Logo() {
   return (
     <a href="#topo" className="flex items-center gap-3" aria-label="Página inicial">
-      <span className="flex h-11 w-11 items-center justify-center rounded-sm border border-gold/50 text-sm font-semibold tracking-[0.15em] text-gold">
+      <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-sm border border-gold/50 text-sm font-semibold tracking-[0.12em] text-gold">
         MM
       </span>
-      <span className="hidden flex-col leading-tight sm:flex">
+      <span className="flex flex-col border-l border-border pl-3 leading-tight">
         <span className="text-sm font-semibold tracking-[0.22em] uppercase">
-          Mauro Monção
+          Mauro
         </span>
-        <span className="text-[10px] tracking-[0.32em] uppercase text-muted-foreground">
+        <span className="text-sm font-semibold tracking-[0.22em] uppercase">
+          Monção
+        </span>
+        <span className="text-[8px] tracking-[0.3em] uppercase text-muted-foreground">
           Advocacia Patrimonial
         </span>
       </span>
@@ -68,385 +68,375 @@ function Logo() {
   );
 }
 
-function CtaButton({
+function GoldButton({
   className = "",
-  variant = "solid",
+  href = CTA_HREF,
+  children,
 }: {
   className?: string;
-  variant?: "solid" | "outline";
+  href?: string;
+  children: React.ReactNode;
 }) {
-  const base =
-    "group inline-flex items-center justify-center gap-2 rounded-sm px-8 py-4 text-sm font-medium tracking-[0.08em] uppercase transition-all duration-500";
-  const styles =
-    variant === "solid"
-      ? "bg-card text-foreground border border-gold/40 shadow-[var(--shadow-premium)] hover:border-gold hover:shadow-[var(--shadow-gold)] hover:-translate-y-0.5"
-      : "border border-border text-foreground hover:border-gold/60 hover:bg-card";
   return (
-    <a href={CTA_HREF} className={`${base} ${styles} ${className}`}>
-      Agendar Consultoria
-      <ArrowRight className="h-4 w-4 text-gold transition-transform duration-500 group-hover:translate-x-1" />
+    <a
+      href={href}
+      className={`group inline-flex items-center justify-center gap-3 rounded-full bg-[var(--gradient-gold)] px-8 py-4 text-sm font-medium text-background shadow-[var(--shadow-gold)] transition-all duration-500 hover:-translate-y-0.5 hover:brightness-110 ${className}`}
+    >
+      {children}
+      <ArrowRight className="h-4 w-4 transition-transform duration-500 group-hover:translate-x-1" />
     </a>
   );
 }
 
-function SectionLabel({ children }: { children: string }) {
+function Pill({ children }: { children: string }) {
   return (
-    <span className="inline-flex items-center gap-2 text-[11px] font-medium tracking-[0.32em] uppercase text-gold">
-      <span className="h-px w-8 bg-gold/60" />
+    <span className="inline-flex items-center rounded-full border border-border bg-card/80 px-4 py-1.5 text-[11px] tracking-[0.12em] text-muted-foreground">
       {children}
     </span>
   );
 }
 
-const audiences = [
+const areas = [
   {
-    icon: Users,
-    title: "Famílias",
-    text: "Famílias que desejam proteger seu patrimônio e garantir tranquilidade às próximas gerações.",
-  },
-  {
-    icon: Building2,
-    title: "Empresários",
-    text: "Empresários que buscam segurança jurídica e blindagem do patrimônio pessoal e empresarial.",
+    icon: ShieldCheck,
+    title: "Proteção Patrimonial",
+    text: "Estruturas jurídicas sob medida para blindar e perpetuar o patrimônio da família.",
   },
   {
     icon: Scale,
     title: "Inventários",
-    text: "Pessoas que desejam organizar inventários com agilidade, discrição e correção técnica.",
+    text: "Condução técnica do inventário, reduzindo custos, prazos e desgastes familiares.",
   },
   {
-    icon: ShieldCheck,
-    title: "Sucessão",
-    text: "Quem deseja evitar conflitos sucessórios e preservar a harmonia familiar no futuro.",
-  },
-];
-
-const areas = [
-  {
-    image: areaPatrimonial,
-    title: "Planejamento Patrimonial",
-    text: "Estruturas jurídicas sob medida para organizar, blindar e perpetuar o patrimônio construído.",
-  },
-  {
-    image: areaInventario,
-    title: "Inventário",
-    text: "Condução técnica e sensível do inventário, reduzindo custos, prazos e desgastes familiares.",
-  },
-  {
-    image: areaHolding,
+    icon: Building2,
     title: "Holding Familiar",
-    text: "Constituição de holdings para proteção de bens, eficiência tributária e governança familiar.",
+    text: "Constituição de holdings para proteção de bens, eficiência tributária e governança.",
   },
   {
-    image: areaSucessorio,
+    icon: FileText,
     title: "Planejamento Sucessório",
-    text: "Transmissão organizada e segura do patrimônio, prevenindo litígios e preservando legados.",
+    text: "Transmissão organizada do patrimônio, prevenindo litígios e preservando legados.",
   },
 ];
 
-const steps = [
-  { n: "01", title: "Agendamento", text: "Agendamento da consultoria em horário reservado e sigiloso." },
-  { n: "02", title: "Diagnóstico", text: "Análise detalhada do patrimônio, riscos e cenário familiar." },
-  { n: "03", title: "Estratégia", text: "Elaboração da estratégia jurídica personalizada e documentada." },
-  { n: "04", title: "Implementação", text: "Implementação com acompanhamento especializado e contínuo." },
+const stats = [
+  { value: "+300", label: "Famílias Atendidas" },
+  { value: "+570", label: "Estruturas Criadas" },
+  { value: "+1000", label: "Processos Conduzidos" },
 ];
 
-const differentials = [
-  { icon: MapPin, title: "Atendimento Nacional", text: "Consultoria presencial e remota em todo o território brasileiro." },
-  { icon: Sparkles, title: "Estratégias Personalizadas", text: "Nenhuma solução de prateleira: cada estrutura é única." },
-  { icon: ShieldCheck, title: "Segurança Jurídica", text: "Estruturas sólidas, documentadas e tecnicamente defensáveis." },
-  { icon: HeartHandshake, title: "Atendimento Humanizado", text: "Escuta atenta ao contexto e aos valores de cada família." },
-  { icon: GraduationCap, title: "Especialização em Patrimônio", text: "Atuação dedicada a proteção patrimonial e sucessões." },
-  { icon: Lock, title: "Confidencialidade Absoluta", text: "Discrição integral sobre informações e bens do cliente." },
-];
+const fieldClass =
+  "w-full rounded-md border border-input bg-background/60 px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground/60 outline-none transition-colors focus:border-gold/60";
 
 function Index() {
   return (
     <div id="topo" className="min-h-screen bg-background text-foreground">
-      {/* HEADER */}
-      <header className="fixed inset-x-0 top-0 z-50 border-b border-border/60 bg-background/70 backdrop-blur-xl">
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-10">
-          <Logo />
-          <nav className="hidden items-center gap-9 text-sm text-muted-foreground lg:flex">
-            <a href="#consultoria" className="transition-colors hover:text-foreground">
-              Consultoria
-            </a>
-            <a href="#atuacao" className="transition-colors hover:text-foreground">
-              Áreas de atuação
-            </a>
-            <a href="#atendimento" className="transition-colors hover:text-foreground">
-              Atendimento
-            </a>
-            <a href="#sobre" className="transition-colors hover:text-foreground">
-              Sobre
-            </a>
-          </nav>
-          <a
-            href={CTA_HREF}
-            className="hidden rounded-sm border border-gold/40 px-6 py-3 text-xs font-medium tracking-[0.14em] uppercase transition-all duration-500 hover:border-gold hover:shadow-[var(--shadow-gold)] md:inline-flex"
-          >
-            Agendar Consultoria
-          </a>
-        </div>
-      </header>
-
       {/* HERO */}
-      <section className="relative overflow-hidden pt-28 lg:pt-0">
-        <div className="mx-auto grid max-w-7xl items-center gap-12 px-6 py-16 lg:min-h-screen lg:grid-cols-2 lg:gap-8 lg:px-10 lg:py-0">
+      <section className="relative overflow-hidden">
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(90%_60%_at_75%_20%,oklch(0.32_0.03_80/0.55),transparent_60%)]" />
+        <div className="relative mx-auto grid max-w-7xl items-center gap-10 px-6 pt-10 pb-20 lg:min-h-[92vh] lg:grid-cols-2 lg:px-10 lg:pt-0 lg:pb-0">
           <div className="animate-fade-up">
-            <SectionLabel>Advocacia Patrimonial</SectionLabel>
-            <h1 className="mt-7 text-4xl leading-[1.08] font-semibold tracking-tight text-balance sm:text-5xl lg:text-[3.4rem]">
-              Proteja o patrimônio da sua família com{" "}
-              <span className="text-gradient-gold">segurança jurídica</span> e
-              planejamento inteligente.
+            <Logo />
+            <h1 className="mt-10 text-4xl leading-[1.1] font-semibold tracking-tight text-balance sm:text-5xl">
+              <span className="text-gradient-gold">Advogado Patrimonial</span>
+              <br />
+              especializado na proteção
+              <br />
+              do seu patrimônio.
             </h1>
-            <p className="mt-7 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg">
-              Evite conflitos familiares, reduza riscos jurídicos e preserve o
-              patrimônio conquistado ao longo da vida por meio de estratégias
-              legais personalizadas.
+            <p className="mt-6 max-w-md text-sm leading-relaxed text-muted-foreground">
+              Atuação técnica e estratégica em proteção patrimonial, holding
+              familiar, inventários e planejamento sucessório — em todo o Brasil.
             </p>
-            <p className="mt-3 text-sm tracking-[0.12em] uppercase text-gold">
-              Atendimento especializado em todo o Brasil
-            </p>
-            <div className="mt-10 flex flex-wrap items-center gap-4">
-              <CtaButton />
-              <a
-                href="#atuacao"
-                className="inline-flex items-center gap-2 text-sm tracking-[0.08em] uppercase text-muted-foreground transition-colors hover:text-foreground"
-              >
-                Conhecer áreas de atuação
-              </a>
+            <div className="mt-9">
+              <GoldButton>Falar com advogado</GoldButton>
             </div>
           </div>
 
-          <div className="relative animate-fade-in lg:h-screen">
-            <div className="relative h-[440px] overflow-hidden rounded-sm border border-border sm:h-[560px] lg:h-full lg:rounded-none lg:border-0">
+          <div className="relative animate-fade-in lg:h-[92vh]">
+            <div className="relative h-[420px] overflow-hidden sm:h-[560px] lg:h-full">
               <img
                 src={heroLawyer}
-                alt="Dr. Mauro Monção Filho, advogado especialista em proteção patrimonial, em seu escritório"
+                alt="Dr. Mauro Monção Filho, advogado especialista em proteção patrimonial"
                 width={1024}
                 height={1408}
                 className="h-full w-full object-cover object-top"
               />
-              <div className="absolute inset-0 bg-[linear-gradient(90deg,var(--background)_0%,transparent_45%)] opacity-90" />
-              <div className="absolute inset-0 bg-[linear-gradient(0deg,var(--background)_2%,transparent_45%)]" />
+              <div className="absolute inset-0 bg-[linear-gradient(90deg,var(--background)_0%,transparent_55%)]" />
+              <div className="absolute inset-0 bg-[linear-gradient(0deg,var(--background)_2%,transparent_50%)]" />
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* PARA QUEM É */}
-      <section id="consultoria" className="border-t border-border py-24 lg:py-32">
-        <div className="mx-auto max-w-7xl px-6 lg:px-10">
-          <Reveal className="max-w-2xl">
-            <SectionLabel>Perfil de clientes</SectionLabel>
-            <h2 className="mt-6 text-3xl font-semibold tracking-tight text-balance sm:text-4xl">
-              Para quem é essa consultoria?
-            </h2>
-            <p className="mt-5 text-muted-foreground">
-              Um atendimento reservado, técnico e estratégico para quem entende
-              que patrimônio se preserva com planejamento.
-            </p>
-          </Reveal>
-
-          <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {audiences.map((item, i) => (
-              <Reveal key={item.title} delay={i * 90}>
-                <article className="glass-card group h-full rounded-sm p-8 hover:-translate-y-1 hover:border-gold/40 hover:shadow-[var(--shadow-premium)]">
-                  <span className="flex h-12 w-12 items-center justify-center rounded-sm border border-gold/30 bg-gold-soft">
-                    <item.icon className="h-5 w-5 text-gold" strokeWidth={1.5} />
-                  </span>
-                  <h3 className="mt-7 text-lg font-semibold">{item.title}</h3>
-                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                    {item.text}
-                  </p>
-                </article>
-              </Reveal>
-            ))}
           </div>
         </div>
       </section>
 
       {/* ÁREAS DE ATUAÇÃO */}
-      <section id="atuacao" className="border-t border-border py-24 lg:py-32">
+      <section id="atuacao" className="py-24 lg:py-32">
         <div className="mx-auto max-w-7xl px-6 lg:px-10">
-          <Reveal className="max-w-2xl">
-            <SectionLabel>Atuação</SectionLabel>
+          <Reveal className="text-center">
+            <Pill>Área de Atuação</Pill>
             <h2 className="mt-6 text-3xl font-semibold tracking-tight sm:text-4xl">
-              Áreas de atuação
+              <span className="text-gradient-gold">Especialista</span> em diversas
+              Áreas
             </h2>
-            <p className="mt-5 text-muted-foreground">
-              Soluções jurídicas construídas com precisão técnica para proteger
-              o que foi conquistado ao longo de gerações.
-            </p>
           </Reveal>
 
-          <div className="mt-14 grid gap-6 sm:grid-cols-2">
+          <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {areas.map((area, i) => (
-              <Reveal key={area.title} delay={i * 100}>
-                <article className="group relative h-full overflow-hidden rounded-sm border border-border bg-card transition-all duration-500 hover:-translate-y-1 hover:border-gold/40 hover:shadow-[var(--shadow-premium)]">
-                  <div className="relative h-56 overflow-hidden sm:h-64">
-                    <img
-                      src={area.image}
-                      alt={area.title}
-                      loading="lazy"
-                      width={1024}
-                      height={768}
-                      className="h-full w-full object-cover transition-transform duration-[900ms] group-hover:scale-105"
+              <Reveal key={area.title} delay={i * 90}>
+                <article className="glass-card group h-full rounded-md p-7 hover:-translate-y-1 hover:border-gold/40 hover:shadow-[var(--shadow-premium)]">
+                  <span className="flex h-11 w-11 items-center justify-center rounded-md bg-[var(--gradient-gold)]">
+                    <area.icon
+                      className="h-5 w-5 text-background"
+                      strokeWidth={1.8}
                     />
-                    <div className="absolute inset-0 bg-[var(--gradient-fade)]" />
-                  </div>
-                  <div className="p-8">
-                    <h3 className="text-xl font-semibold">{area.title}</h3>
-                    <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                      {area.text}
-                    </p>
-                  </div>
+                  </span>
+                  <h3 className="mt-6 text-base font-semibold">{area.title}</h3>
+                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                    {area.text}
+                  </p>
                 </article>
               </Reveal>
             ))}
           </div>
-        </div>
-      </section>
 
-      {/* COMO FUNCIONA - FUNDO BRANCO */}
-      <section id="atendimento" className="section-light py-24 lg:py-32">
-        <div className="mx-auto max-w-7xl px-6 lg:px-10">
-          <Reveal className="max-w-2xl">
-            <SectionLabel>Processo</SectionLabel>
-            <h2 className="mt-6 text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
-              Como funciona o atendimento?
-            </h2>
-            <p className="mt-5 text-muted-foreground">
-              Um método claro, em quatro etapas, do primeiro contato à
-              implementação da estratégia.
-            </p>
-          </Reveal>
-
-          <div className="mt-14 grid gap-px overflow-hidden rounded-sm border border-border bg-border sm:grid-cols-2 lg:grid-cols-4">
-            {steps.map((step, i) => (
-              <Reveal key={step.n} delay={i * 90} className="bg-card">
-                <div className="h-full p-8 transition-colors duration-500 hover:bg-background">
-                  <span className="text-3xl font-semibold text-gold">{step.n}</span>
-                  <h3 className="mt-6 text-lg font-semibold text-foreground">
-                    {step.title}
-                  </h3>
-                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                    {step.text}
-                  </p>
-                </div>
-              </Reveal>
-            ))}
+          <div className="mt-12 flex justify-center">
+            <a
+              href="#contato"
+              className="rounded-full border border-border bg-card/80 px-6 py-2 text-xs tracking-[0.12em] text-muted-foreground transition-colors hover:border-gold/50 hover:text-foreground"
+            >
+              Ver mais
+            </a>
           </div>
         </div>
       </section>
 
       {/* SOBRE */}
-      <section id="sobre" className="border-t border-border py-24 lg:py-32">
+      <section id="sobre" className="py-20 lg:py-28">
         <div className="mx-auto grid max-w-7xl items-center gap-14 px-6 lg:grid-cols-2 lg:px-10">
           <Reveal>
-            <div className="relative overflow-hidden rounded-sm border border-border">
-              <img
-                src={aboutLawyer}
-                alt="Retrato do Dr. Mauro Monção Filho em seu escritório de advocacia"
-                loading="lazy"
-                width={1024}
-                height={1280}
-                className="h-full w-full object-cover"
-              />
-              <div className="absolute inset-0 bg-[linear-gradient(0deg,var(--background)_0%,transparent_45%)] opacity-70" />
+            <div className="relative overflow-hidden rounded-md border border-border bg-card p-6 sm:p-10">
+              <div className="absolute inset-0 opacity-25">
+                <img
+                  src={areaInventario}
+                  alt=""
+                  aria-hidden
+                  loading="lazy"
+                  className="h-full w-full object-cover"
+                />
+              </div>
+              <div className="relative overflow-hidden rounded-md bg-[var(--gradient-gold)] p-2 sm:ml-10">
+                <img
+                  src={aboutLawyer}
+                  alt="Retrato do Dr. Mauro Monção Filho"
+                  loading="lazy"
+                  width={1024}
+                  height={1280}
+                  className="h-[360px] w-full rounded-sm object-cover object-top sm:h-[460px]"
+                />
+              </div>
             </div>
           </Reveal>
 
           <Reveal delay={120}>
-            <SectionLabel>Sobre o advogado</SectionLabel>
+            <Pill>Sobre</Pill>
             <h2 className="mt-6 text-3xl font-semibold tracking-tight sm:text-4xl">
-              Dr. Mauro Monção Filho
+              Quem é{" "}
+              <span className="text-gradient-gold">Dr. Mauro Monção Filho</span>
             </h2>
-            <p className="mt-6 leading-relaxed text-muted-foreground">
+            <p className="mt-6 text-sm leading-relaxed text-muted-foreground">
               Advogado especialista em Proteção Patrimonial, Planejamento
-              Sucessório e Inventários.
+              Sucessório e Inventários. Atua auxiliando famílias e empresários na
+              preservação de patrimônios, com soluções jurídicas personalizadas,
+              segurança e discrição.
             </p>
-            <p className="mt-4 leading-relaxed text-muted-foreground">
-              Atua auxiliando famílias e empresários na preservação de
-              patrimônios, oferecendo soluções jurídicas personalizadas com
-              segurança, discrição e excelência.
+            <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
+              Com ampla experiência em estruturas patrimoniais e sucessões, é
+              reconhecido pela abordagem estratégica e humanizada, atendendo
+              clientes em todo o território nacional com excelência técnica.
             </p>
-            <p className="mt-6 text-sm tracking-[0.12em] uppercase text-gold">
-              Atendimento em todo o território nacional
-            </p>
-            <div className="mt-10">
-              <CtaButton variant="outline" />
+
+            <div className="mt-9 grid grid-cols-3 gap-4">
+              {stats.map((stat) => (
+                <div
+                  key={stat.label}
+                  className="rounded-md border border-border bg-card px-4 py-5 text-center"
+                >
+                  <p className="text-2xl font-semibold text-gold">{stat.value}</p>
+                  <p className="mt-1 text-[11px] leading-tight text-muted-foreground">
+                    {stat.label}
+                  </p>
+                </div>
+              ))}
+            </div>
+
+            <div className="mt-9">
+              <GoldButton>Falar com advogado</GoldButton>
             </div>
           </Reveal>
         </div>
       </section>
 
-      {/* DIFERENCIAIS */}
-      <section className="border-t border-border py-24 lg:py-32">
-        <div className="mx-auto max-w-7xl px-6 lg:px-10">
-          <Reveal className="max-w-2xl">
-            <SectionLabel>Diferenciais</SectionLabel>
-            <h2 className="mt-6 text-3xl font-semibold tracking-tight sm:text-4xl">
-              Por que confiar seu patrimônio a este escritório
-            </h2>
-          </Reveal>
-
-          <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {differentials.map((item, i) => (
-              <Reveal key={item.title} delay={i * 80}>
-                <article className="glass-card flex h-full items-start gap-5 rounded-sm p-8 hover:-translate-y-1 hover:border-gold/40 hover:shadow-[var(--shadow-premium)]">
-                  <span className="mt-1 flex h-10 w-10 shrink-0 items-center justify-center rounded-sm border border-gold/30 bg-gold-soft">
-                    <item.icon className="h-4.5 w-4.5 text-gold" strokeWidth={1.5} />
-                  </span>
-                  <div>
-                    <h3 className="flex items-center gap-2 text-base font-semibold">
-                      <Check className="h-4 w-4 text-gold" />
-                      {item.title}
-                    </h3>
-                    <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                      {item.text}
-                    </p>
-                  </div>
-                </article>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CTA FINAL */}
-      <section id="contato" className="border-t border-border py-24 lg:py-32">
-        <div className="mx-auto max-w-4xl px-6 text-center lg:px-10">
+      {/* CONTATO */}
+      <section id="contato" className="py-20 lg:py-28">
+        <div className="mx-auto grid max-w-7xl items-center gap-14 px-6 lg:grid-cols-2 lg:px-10">
           <Reveal>
-            <div className="glass-card rounded-sm px-8 py-16 shadow-[var(--shadow-premium)] sm:px-16">
-              <SectionLabel>Consultoria reservada</SectionLabel>
-              <h2 className="mt-7 text-3xl font-semibold tracking-tight text-balance sm:text-4xl">
-                Proteja hoje aquilo que levou anos para construir.
-              </h2>
-              <p className="mx-auto mt-6 max-w-2xl leading-relaxed text-muted-foreground">
-                Agende uma consultoria e descubra como preservar seu patrimônio
-                com segurança jurídica.
-              </p>
-              <div className="mt-10 flex justify-center">
-                <CtaButton />
-              </div>
+            <Pill>Contato</Pill>
+            <h2 className="mt-6 text-3xl font-semibold tracking-tight text-balance sm:text-4xl">
+              Como <span className="text-gradient-gold">podemos ajudar</span> a
+              proteger seu patrimônio?
+            </h2>
+            <p className="mt-5 max-w-md text-sm leading-relaxed text-muted-foreground">
+              Para informações ou contato com nossa equipe, utilize o formulário
+              ao lado, especificando o tipo de solicitação. Retornaremos o mais
+              breve possível.
+            </p>
+            <div className="relative mt-10 overflow-hidden rounded-md">
+              <img
+                src={areaInventario}
+                alt="Escritório de advocacia"
+                loading="lazy"
+                className="h-64 w-full object-cover"
+              />
+              <div className="absolute inset-0 bg-[var(--gradient-fade)]" />
             </div>
+          </Reveal>
+
+          <Reveal delay={120}>
+            <form
+              className="glass-card rounded-md p-8 sm:p-10"
+              onSubmit={(e) => e.preventDefault()}
+            >
+              <h3 className="text-2xl font-semibold">Converse conosco!</h3>
+              <p className="mt-3 text-sm text-muted-foreground">
+                Preencha o formulário e entraremos em contato o mais rápido
+                possível para entender sua situação.
+              </p>
+
+              <div className="mt-7 space-y-5">
+                <div>
+                  <label className="text-xs font-medium" htmlFor="nome">
+                    Nome Completo*
+                  </label>
+                  <input
+                    id="nome"
+                    required
+                    placeholder="Ex: Mauro Monção"
+                    className={`mt-2 ${fieldClass}`}
+                  />
+                </div>
+
+                <div className="grid gap-5 sm:grid-cols-2">
+                  <div>
+                    <label className="text-xs font-medium" htmlFor="tel">
+                      Telefone/WhatsApp*
+                    </label>
+                    <input
+                      id="tel"
+                      required
+                      placeholder="Ex: (00) 00000-0000"
+                      className={`mt-2 ${fieldClass}`}
+                    />
+                  </div>
+                  <div>
+                    <label className="text-xs font-medium" htmlFor="email">
+                      E-mail*
+                    </label>
+                    <input
+                      id="email"
+                      type="email"
+                      required
+                      placeholder="Ex: nome@email.com"
+                      className={`mt-2 ${fieldClass}`}
+                    />
+                  </div>
+                </div>
+
+                <div>
+                  <label className="text-xs font-medium" htmlFor="assunto">
+                    Assunto*
+                  </label>
+                  <select id="assunto" required className={`mt-2 ${fieldClass}`}>
+                    <option>Proteção Patrimonial</option>
+                    <option>Inventário</option>
+                    <option>Holding Familiar</option>
+                    <option>Planejamento Sucessório</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label className="text-xs font-medium" htmlFor="mensagem">
+                    Mensagem*
+                  </label>
+                  <textarea
+                    id="mensagem"
+                    required
+                    rows={4}
+                    placeholder="Descreva brevemente o seu caso"
+                    className={`mt-2 ${fieldClass}`}
+                  />
+                </div>
+
+                <button
+                  type="submit"
+                  className="w-full rounded-full bg-[var(--gradient-gold)] py-4 text-sm font-medium text-background transition-all duration-500 hover:brightness-110"
+                >
+                  Enviar mensagem
+                </button>
+              </div>
+            </form>
           </Reveal>
         </div>
       </section>
 
       {/* RODAPÉ */}
-      <footer className="border-t border-border bg-background py-14">
-        <div className="mx-auto flex max-w-7xl flex-col items-start justify-between gap-8 px-6 lg:flex-row lg:items-center lg:px-10">
+      <footer className="mt-10 border-t border-border bg-card/60 py-14">
+        <div className="mx-auto grid max-w-7xl gap-10 px-6 lg:grid-cols-3 lg:px-10">
           <Logo />
-          <div className="text-sm text-muted-foreground">
-            <p className="font-medium text-foreground">Dr. Mauro Monção Filho</p>
-            <p className="mt-1">Advogado Especialista em Proteção Patrimonial</p>
+
+          <div className="space-y-3 text-sm text-muted-foreground">
+            <p className="flex items-center gap-3">
+              <Mail className="h-4 w-4 shrink-0 text-gold" />
+              <span>
+                <strong className="text-foreground">E-mail:</strong>{" "}
+                contato@mauromoncao.adv.br
+              </span>
+            </p>
+            <p className="flex items-center gap-3">
+              <Phone className="h-4 w-4 shrink-0 text-gold" />
+              <span>
+                <strong className="text-foreground">Telefone/WhatsApp:</strong>{" "}
+                (00) 00000-0000
+              </span>
+            </p>
+            <p className="flex items-center gap-3">
+              <MapPin className="h-4 w-4 shrink-0 text-gold" />
+              <span>
+                <strong className="text-foreground">Atendimento:</strong> Todo o
+                Brasil — presencial e online
+              </span>
+            </p>
           </div>
-          <p className="text-xs tracking-[0.16em] uppercase text-muted-foreground">
-            © {new Date().getFullYear()} — Todos os direitos reservados
-          </p>
+
+          <div>
+            <p className="text-sm font-semibold">Acompanhe:</p>
+            <div className="mt-4 flex gap-3">
+              {[Instagram, Linkedin, Facebook].map((Icon, i) => (
+                <a
+                  key={i}
+                  href="#topo"
+                  aria-label="Rede social"
+                  className="flex h-9 w-9 items-center justify-center rounded-full border border-border transition-colors hover:border-gold/60 hover:text-gold"
+                >
+                  <Icon className="h-4 w-4" />
+                </a>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <div className="mx-auto mt-12 max-w-7xl border-t border-border px-6 pt-6 text-center text-xs text-muted-foreground lg:px-10">
+          Copyright © Dr. Mauro Monção Filho - {new Date().getFullYear()} - Todos
+          os direitos reservados
         </div>
       </footer>
     </div>
