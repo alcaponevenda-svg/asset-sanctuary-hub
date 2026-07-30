@@ -14,7 +14,7 @@ import {
 } from "lucide-react";
 
 import { Reveal } from "@/components/Reveal";
-import heroLawyer from "@/assets/hero-lawyer.jpg";
+import heroAsset from "@/assets/mauro-hero.png.asset.json";
 import aboutLawyer from "@/assets/about-lawyer.jpg";
 import areaInventario from "@/assets/area-inventario.jpg";
 
@@ -156,10 +156,10 @@ function Index() {
           <div className="relative animate-fade-in lg:h-[92vh]">
             <div className="relative h-[420px] overflow-hidden sm:h-[560px] lg:h-full">
               <img
-                src={heroLawyer}
+                src={heroAsset.url}
                 alt="Dr. Mauro Monção Filho, advogado especialista em proteção patrimonial"
-                width={1024}
-                height={1408}
+                width={922}
+                height={1177}
                 className="h-full w-full object-cover object-top"
               />
               <div className="absolute inset-0 bg-[linear-gradient(90deg,var(--background)_0%,transparent_55%)]" />
