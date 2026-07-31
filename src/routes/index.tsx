@@ -752,6 +752,18 @@ function Index() {
           os direitos reservados
         </div>
       </footer>
+
+      {/* Floating Action Button */}
+      <a
+        href={CTA_HREF}
+        className="fab"
+        aria-label="Agendar consultoria"
+      >
+        <span className="fab__ring" />
+        <span className="fab__ring" />
+        <CalendarCheck className="h-5 w-5" />
+        <span className="hidden sm:inline">Agendar</span>
+      </a>
     </div>
   );
 }
