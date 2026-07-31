@@ -336,26 +336,24 @@ function Index() {
           </p>
         </div>
 
-        <div className="relative mx-auto w-full">
+        <a
+          href={CTA_HREF}
+          className="group relative mx-auto block w-full focus:outline-none"
+          aria-label="Agendar consultoria com Dr. Mauro Monção Filho"
+        >
           <img
             src={bannerHeroAsset.url}
             alt="Dr. Mauro Monção Filho — Advogado Patrimonial"
             width={1920}
             height={960}
-            className="h-auto w-full object-cover object-center"
+            className="h-auto w-full object-cover object-center transition-transform duration-700 group-hover:scale-[1.01]"
             loading="eager"
             decoding="async"
           />
           {/* Smooth fade to the next section */}
           <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(0deg,var(--background)_0%,transparent_20%)]" />
           <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,var(--background)_0%,transparent_20%)]" />
-        </div>
-
-        <div className="relative -mt-12 flex justify-center px-6 pb-14 sm:-mt-16 sm:pb-20 lg:-mt-20 lg:pb-24">
-          <GoldButton className="shadow-[0_10px_40px_-10px_rgba(200,164,93,0.4)]">
-            Agendar Consultoria
-          </GoldButton>
-        </div>
+        </a>
       </section>
 
       {/* ÁREAS DE ATUAÇÃO */}
