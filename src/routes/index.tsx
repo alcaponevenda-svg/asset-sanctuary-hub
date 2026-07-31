@@ -26,10 +26,7 @@ import {
   StatCard,
 } from "@/components/AboutEffects";
 import { AreaCard } from "@/components/AreaCard";
-import heroAsset from "@/assets/mauro-hero-4.png.asset.json";
 import bannerHeroAsset from "@/assets/banner-advogado-premium-1.png.asset.json";
-import heroBgAsset from "@/assets/hero-bg.png.asset.json";
-import glowAsset from "@/assets/golden-glow.jpg.asset.json";
 import sobreBgAsset from "@/assets/sobre-bg-2.png.asset.json";
 import aboutAsset from "@/assets/mauro-sobre-2.png";
 import areaInventario from "@/assets/area-inventario.jpg";
