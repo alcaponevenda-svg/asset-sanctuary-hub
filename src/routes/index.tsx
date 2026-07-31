@@ -13,8 +13,7 @@ import {
   Facebook,
   Star,
   CalendarCheck,
-  Search,
-  FileCheck,
+  FolderOpen,
   Shield,
 } from "lucide-react";
 
@@ -301,13 +300,13 @@ const steps = [
   },
   {
     number: "02",
-    icon: Search,
+    icon: FolderOpen,
     title: "Análise Detalhada do Patrimônio",
     text: "Mapeamos bens, riscos e oportunidades para entender o cenário jurídico completo da sua família ou empresa.",
   },
   {
     number: "03",
-    icon: FileCheck,
+    icon: Scale,
     title: "Elaboração da Estratégia Jurídica",
     text: "Desenhamos a solução mais adequada: holding, planejamento sucessório, proteção de bens ou inventário.",
   },
