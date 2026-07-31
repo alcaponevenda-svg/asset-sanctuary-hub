@@ -393,8 +393,12 @@ function Index() {
                 />
               </Reveal>
             ))}
-
           </div>
+
+          <Reveal delay={520} className="mt-12 flex justify-center">
+            <GoldButton>Agendar Consultoria</GoldButton>
+          </Reveal>
+
         </div>
       </section>
 
