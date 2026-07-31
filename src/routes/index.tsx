@@ -13,8 +13,7 @@ import {
   Facebook,
   Star,
   CalendarCheck,
-  Search,
-  FileCheck,
+  FolderOpen,
   Shield,
 } from "lucide-react";
 
@@ -301,13 +300,13 @@ const steps = [
   },
   {
     number: "02",
-    icon: Search,
+    icon: FolderOpen,
     title: "Análise Detalhada do Patrimônio",
     text: "Mapeamos bens, riscos e oportunidades para entender o cenário jurídico completo da sua família ou empresa.",
   },
   {
     number: "03",
-    icon: FileCheck,
+    icon: Scale,
     title: "Elaboração da Estratégia Jurídica",
     text: "Desenhamos a solução mais adequada: holding, planejamento sucessório, proteção de bens ou inventário.",
   },
@@ -424,17 +423,18 @@ function Index() {
 
 
       {/* JORNADA PASSO A PASSO */}
-      <section className="section-light py-16 sm:py-24 lg:py-32">
+      <section className="journey py-20 sm:py-28 lg:py-40">
         <div className="mx-auto max-w-7xl px-6 lg:px-10">
-          <div className="grid gap-10 lg:grid-cols-2 lg:items-end">
+          <div className="grid gap-10 lg:grid-cols-2 lg:items-end lg:gap-16">
             <Reveal>
-              <h2 className="text-3xl font-semibold tracking-tight text-balance sm:text-4xl">
+              <h2 className="journey__title text-3xl leading-[1.1] font-semibold tracking-tight text-balance sm:text-4xl lg:text-[3.25rem]">
                 Sua Jornada Patrimonial,{" "}
-                <span className="text-gradient-gold">PASSO A PASSO!</span>
+                <span className="journey__gold">PASSO A PASSO.</span>
               </h2>
+              <span className="journey__rule mt-7 block" aria-hidden="true" />
             </Reveal>
             <Reveal delay={100}>
-              <p className="max-w-md text-sm leading-relaxed text-muted-foreground lg:ml-auto">
+              <p className="journey__lead max-w-md text-base leading-[1.8] lg:ml-auto lg:text-right">
                 Desde o primeiro contato, nos dedicamos a esclarecer e estruturar o
                 seu cenário patrimonial, garantindo a melhor estratégia de proteção
                 em todas as fases jurídicas.
@@ -442,26 +442,34 @@ function Index() {
             </Reveal>
           </div>
 
-          <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {steps.map((step, i) => (
-              <Reveal key={step.number} delay={i * 90}>
-                <article className="glass-card group h-full rounded-md p-6 sm:p-7 transition-all duration-500 hover:-translate-y-1 hover:border-gold/40 hover:shadow-[var(--shadow-premium)]">
-                  <span className="flex h-11 w-11 items-center justify-center rounded-md bg-[var(--gradient-gold)]">
-                    <step.icon
-                      className="h-5 w-5 text-background"
-                      strokeWidth={1.8}
-                    />
-                  </span>
-                  <p className="mt-5 text-xs font-semibold tracking-[0.12em] text-muted-foreground uppercase">
-                    Etapa {step.number}
-                  </p>
-                  <h3 className="mt-2 text-base font-semibold">{step.title}</h3>
-                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                    {step.text}
-                  </p>
-                </article>
-              </Reveal>
-            ))}
+          <div className="relative mt-16 sm:mt-20 lg:mt-24">
+            <span
+              className="journey__line hidden lg:block"
+              aria-hidden="true"
+            />
+            <div className="relative grid gap-8 sm:grid-cols-2 lg:grid-cols-4 lg:gap-7">
+              {steps.map((step, i) => (
+                <Reveal key={step.number} delay={i * 140}>
+                  <article className="journey-card group h-full p-8 sm:p-9">
+                    <div className="flex items-center justify-between">
+                      <span className="journey-card__badge flex h-12 w-12 items-center justify-center rounded-full text-sm font-semibold tracking-wide">
+                        {step.number}
+                      </span>
+                      <step.icon
+                        className="journey-card__icon h-6 w-6"
+                        strokeWidth={1.5}
+                      />
+                    </div>
+                    <h3 className="journey-card__title mt-8 text-lg leading-snug font-semibold">
+                      {step.title}
+                    </h3>
+                    <p className="journey-card__text mt-4 text-base leading-[1.75]">
+                      {step.text}
+                    </p>
+                  </article>
+                </Reveal>
+              ))}
+            </div>
           </div>
         </div>
       </section>
