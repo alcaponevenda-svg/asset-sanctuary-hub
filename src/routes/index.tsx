@@ -347,7 +347,7 @@ function Index() {
               alt="Dr. Mauro Monção Filho — Advogado Patrimonial"
               width={1920}
               height={960}
-              className="absolute inset-0 h-full w-full object-cover object-[15%_center] transition-transform duration-700 group-hover:scale-[1.01] lg:relative lg:h-auto lg:object-center"
+              className="absolute inset-0 h-full w-full object-cover object-left transition-transform duration-700 group-hover:scale-[1.01] lg:relative lg:h-auto lg:object-center"
               loading="eager"
               decoding="async"
             />
