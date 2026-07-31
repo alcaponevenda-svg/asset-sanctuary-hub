@@ -645,3 +645,93 @@ iframe[src*="lovable.dev/badge"] {
     animation: none !important;
   }
 }
+
+/* ===== Seção "Sua Jornada Patrimonial" — premium light ===== */
+.journey {
+  --j-bg-top: oklch(1 0 0);
+  --j-bg-bottom: oklch(0.985 0.006 80);
+  --j-card: oklch(1 0 0);
+  --j-text: oklch(0.18 0 0);
+  --j-muted: oklch(0.52 0 0);
+  --j-gold: oklch(0.735 0.082 82);
+  --j-gold-deep: oklch(0.6 0.098 72);
+  --j-border: oklch(0.905 0.033 84);
+  background:
+    radial-gradient(70% 45% at 50% 0%, oklch(0.75 0.08 82 / 0.06), transparent 70%),
+    linear-gradient(180deg, var(--j-bg-top) 0%, var(--j-bg-bottom) 100%);
+  color: var(--j-text);
+}
+
+.journey__title {
+  color: var(--j-text);
+}
+.journey__gold {
+  background: linear-gradient(100deg, var(--j-gold), var(--j-gold-deep));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.journey__rule {
+  height: 2px;
+  width: 96px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--j-gold), transparent);
+}
+.journey__lead {
+  color: var(--j-muted);
+}
+
+.journey__line {
+  position: absolute;
+  left: 6%;
+  right: 6%;
+  top: 3.35rem;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--j-border) 8%,
+    var(--j-gold) 50%,
+    var(--j-border) 92%,
+    transparent
+  );
+}
+
+.journey-card {
+  background: var(--j-card);
+  border: 1px solid var(--j-border);
+  border-radius: 22px;
+  box-shadow: 0 18px 50px oklch(0 0 0 / 0.05);
+  transition:
+    transform 350ms ease,
+    box-shadow 350ms ease,
+    border-color 350ms ease;
+}
+.journey-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--j-gold);
+  box-shadow:
+    0 26px 60px oklch(0 0 0 / 0.08),
+    0 0 0 1px oklch(0.735 0.082 82 / 0.25),
+    0 12px 40px -20px oklch(0.735 0.082 82 / 0.55);
+}
+.journey-card__badge {
+  background: oklch(0.735 0.082 82 / 0.14);
+  border: 1px solid oklch(0.735 0.082 82 / 0.45);
+  color: var(--j-text);
+}
+.journey-card__icon {
+  color: var(--j-gold-deep);
+}
+.journey-card__title {
+  color: var(--j-text);
+}
+.journey-card__text {
+  color: var(--j-muted);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .journey-card {
+    transition: none;
+  }
+}
