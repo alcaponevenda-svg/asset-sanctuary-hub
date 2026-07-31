@@ -25,7 +25,7 @@ export function AreaCard({ icon: Icon, title, text }: AreaCardProps) {
     >
       <span className="area-card__glow pointer-events-none absolute inset-0" />
       <span className="area-card__icon relative flex h-11 w-11 items-center justify-center rounded-md bg-[var(--gradient-gold)]">
-        <Icon className="h-5 w-5 text-background" strokeWidth={1.8} />
+        <Icon className="h-5 w-5 text-white" strokeWidth={1.8} />
       </span>
       <h3 className="area-card__title relative mt-6 text-base font-semibold">
         {title}
