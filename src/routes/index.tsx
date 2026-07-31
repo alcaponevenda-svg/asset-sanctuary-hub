@@ -26,9 +26,7 @@ import {
   StatCard,
 } from "@/components/AboutEffects";
 import { AreaCard } from "@/components/AreaCard";
-import heroAsset from "@/assets/mauro-hero-4.png.asset.json";
-import heroBgAsset from "@/assets/hero-bg.png.asset.json";
-import glowAsset from "@/assets/golden-glow.jpg.asset.json";
+import bannerHeroAsset from "@/assets/banner-advogado-premium-1.png.asset.json";
 import sobreBgAsset from "@/assets/sobre-bg-2.png.asset.json";
 import aboutAsset from "@/assets/mauro-sobre-2.png";
 import areaInventario from "@/assets/area-inventario.jpg";
@@ -327,62 +325,37 @@ const fieldClass =
 function Index() {
   return (
     <div id="topo" className="min-h-screen bg-background text-foreground">
-      {/* HERO */}
+      {/* HERO - Banner Premium */}
       <section className="relative overflow-hidden">
-        <div
-          className="pointer-events-none absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: `url(${heroBgAsset.url})` }}
-        />
-        <div className="pointer-events-none absolute inset-0 bg-[oklch(0.146_0_0_/_0.45)]" />
-        <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(0deg,var(--background)_0%,transparent_35%)]" />
-        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(90%_60%_at_75%_20%,oklch(0.32_0.03_80/0.35),transparent_60%)]" />
-
-        <div className="relative mx-auto grid max-w-7xl items-center gap-8 px-6 pt-12 pb-14 sm:gap-10 sm:pb-20 lg:min-h-[92vh] lg:grid-cols-2 lg:px-10 lg:pt-0 lg:pb-0">
-          <div className="animate-fade-up">
-            <span className="inline-flex items-center gap-2 rounded-full border border-gold/30 bg-white/5 px-4 py-1.5 text-[11px] tracking-[0.18em] text-gold uppercase backdrop-blur-md">
-              Proteção Patrimonial
-            </span>
-            <h1 className="mt-5 text-[1.75rem] leading-[1.15] font-semibold tracking-tight text-balance sm:text-5xl sm:leading-[1.1]">
-              <span className="text-gradient-gold">Advogado Patrimonial</span>
-              <br className="hidden sm:block" />{" "}
-              especializado na proteção
-              <br className="hidden sm:block" />{" "}
-              do seu patrimônio.
-            </h1>
-            <p className="mt-5 max-w-md text-sm leading-relaxed text-muted-foreground sm:mt-6 sm:text-base">
-              Atuação técnica e estratégica em proteção patrimonial, holding
-              familiar, inventários e planejamento sucessório — em todo o Brasil.
-            </p>
-            <div className="mt-8 sm:mt-9">
-              <GoldButton>Agendar Consultoria</GoldButton>
-            </div>
-          </div>
-
-          <div className="relative animate-fade-in lg:h-[92vh] lg:scale-105">
-            <div className="pointer-events-none absolute inset-0 -z-10 blur-3xl [background:radial-gradient(55%_45%_at_50%_35%,oklch(0.72_0.09_80/0.28),transparent_70%)]" />
-            <div className="pointer-events-none absolute top-[2%] left-1/2 -z-10 aspect-square w-[90%] -translate-x-1/2 opacity-70 blur-2xl sm:top-[4%] sm:w-[75%] lg:top-[5%] lg:w-[60%]">
-              <img
-                src={glowAsset.url}
-                alt=""
-                width={600}
-                height={600}
-                className="h-full w-full object-cover"
-                aria-hidden="true"
-              />
-            </div>
-            <div className="relative h-[380px] overflow-hidden sm:h-[560px] lg:h-full">
-              <img
-                src={heroAsset.url}
-                alt="Dr. Mauro Monção Filho, advogado especialista em proteção patrimonial"
-                width={1024}
-                height={1408}
-                className="h-full w-full object-cover object-top drop-shadow-[0_30px_60px_rgba(0,0,0,0.55)]"
-              />
-              <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(0deg,var(--background)_2%,transparent_40%)]" />
-            </div>
-          </div>
-
+        {/* SEO text for crawlers */}
+        <div className="sr-only">
+          <h1>Advogado Patrimonial especializado na proteção do seu patrimônio.</h1>
+          <p>
+            Atuação técnica e estratégica em proteção patrimonial, holding
+            familiar, inventários e planejamento sucessório — em todo o Brasil.
+          </p>
         </div>
+
+        <a
+          href={CTA_HREF}
+          className="group relative mx-auto block w-full overflow-hidden focus:outline-none"
+          aria-label="Agendar consultoria com Dr. Mauro Monção Filho"
+        >
+          <div className="relative h-[40vh] w-full lg:h-auto">
+            <img
+              src={bannerHeroAsset.url}
+              alt="Dr. Mauro Monção Filho — Advogado Patrimonial"
+              width={1920}
+              height={960}
+              className="absolute inset-0 h-full w-full object-cover object-left-top transition-transform duration-700 group-hover:scale-[1.01] lg:relative lg:h-auto lg:object-center"
+              loading="eager"
+              decoding="async"
+            />
+          </div>
+          {/* Smooth fade to the next section */}
+          <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(0deg,var(--background)_0%,transparent_20%)]" />
+          <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,var(--background)_0%,transparent_20%)]" />
+        </a>
       </section>
 
       {/* ÁREAS DE ATUAÇÃO */}
