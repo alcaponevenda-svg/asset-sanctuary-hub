@@ -338,18 +338,20 @@ function Index() {
 
         <a
           href={CTA_HREF}
-          className="group relative mx-auto block w-full focus:outline-none"
+          className="group relative mx-auto block w-full overflow-hidden focus:outline-none"
           aria-label="Agendar consultoria com Dr. Mauro Monção Filho"
         >
-          <img
-            src={bannerHeroAsset.url}
-            alt="Dr. Mauro Monção Filho — Advogado Patrimonial"
-            width={1920}
-            height={960}
-            className="h-auto w-full object-cover object-center sm:min-h-[55vh] sm:object-[25%_center] lg:min-h-0 lg:object-center"
-            loading="eager"
-            decoding="async"
-          />
+          <div className="relative h-[50vh] w-full sm:h-[55vh] lg:h-auto">
+            <img
+              src={bannerHeroAsset.url}
+              alt="Dr. Mauro Monção Filho — Advogado Patrimonial"
+              width={1920}
+              height={960}
+              className="absolute inset-0 h-full w-full object-cover object-center transition-transform duration-700 group-hover:scale-[1.01] sm:object-[25%_center] lg:relative lg:h-auto lg:object-center"
+              loading="eager"
+              decoding="async"
+            />
+          </div>
           {/* Smooth fade to the next section */}
           <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(0deg,var(--background)_0%,transparent_20%)]" />
           <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,var(--background)_0%,transparent_20%)]" />
