@@ -480,23 +480,26 @@ function Index() {
         <DustParticles />
         <MouseGlow />
         <div className="relative mx-auto grid max-w-7xl items-center gap-10 px-6 lg:grid-cols-[1.2fr_1.5fr] lg:gap-20 lg:px-10">
-          <Reveal className="about-left">
+          <div className="about-left">
             <div className="about-photo-wrap relative overflow-hidden rounded-md sm:p-10 lg:p-6">
               <div className="about-photo-halo absolute inset-0" aria-hidden="true" />
               <div className="about-shoulder-light absolute inset-0" aria-hidden="true" />
               <div className="about-photo relative overflow-hidden rounded-md bg-[var(--gradient-gold)] p-1.5 sm:p-2">
-                <img
-                  src={aboutAsset}
-                  alt="Retrato do Dr. Mauro Monção Filho"
-                  loading="lazy"
-                  width={1024}
-                  height={1536}
-                  className="h-auto w-full rounded-sm object-contain"
-                />
+                <div className="relative flex aspect-square items-center justify-center overflow-hidden rounded-sm bg-black">
+                  <div className="absolute inset-0 bg-[radial-gradient(80%_60%_at_70%_30%,oklch(0.22_0.04_80/0.25),transparent_70%)]" />
+                  <img
+                    src={aboutAsset}
+                    alt="Retrato do Dr. Mauro Monção Filho"
+                    loading="lazy"
+                    width={1024}
+                    height={1536}
+                    className="relative z-10 h-full w-full object-contain"
+                  />
+                </div>
                 <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(0deg,var(--background)_0%,transparent_55%)]" />
               </div>
             </div>
-          </Reveal>
+          </div>
 
           <Reveal className="about-right" delay={120}>
             <div className="relative">
