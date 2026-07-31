@@ -338,7 +338,10 @@ function Index() {
 
         <div className="relative mx-auto grid max-w-7xl items-center gap-8 px-6 pt-12 pb-14 sm:gap-10 sm:pb-20 lg:min-h-[92vh] lg:grid-cols-2 lg:px-10 lg:pt-0 lg:pb-0">
           <div className="animate-fade-up">
-            <h1 className="text-[1.75rem] leading-[1.15] font-semibold tracking-tight text-balance sm:text-5xl sm:leading-[1.1]">
+            <span className="inline-flex items-center gap-2 rounded-full border border-gold/30 bg-white/5 px-4 py-1.5 text-[11px] tracking-[0.18em] text-gold uppercase backdrop-blur-md">
+              Proteção Patrimonial
+            </span>
+            <h1 className="mt-5 text-[1.75rem] leading-[1.15] font-semibold tracking-tight text-balance sm:text-5xl sm:leading-[1.1]">
               <span className="text-gradient-gold">Advogado Patrimonial</span>
               <br className="hidden sm:block" />{" "}
               especializado na proteção
@@ -355,17 +358,19 @@ function Index() {
           </div>
 
           <div className="relative animate-fade-in lg:h-[92vh] lg:scale-105">
+            <div className="pointer-events-none absolute inset-0 -z-10 blur-3xl [background:radial-gradient(55%_45%_at_50%_35%,oklch(0.72_0.09_80/0.28),transparent_70%)]" />
             <div className="relative h-[380px] overflow-hidden sm:h-[560px] lg:h-full">
               <img
                 src={heroAsset.url}
                 alt="Dr. Mauro Monção Filho, advogado especialista em proteção patrimonial"
                 width={1024}
                 height={1408}
-                className="h-full w-full object-cover object-top"
+                className="h-full w-full object-cover object-top drop-shadow-[0_30px_60px_rgba(0,0,0,0.55)]"
               />
               <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(0deg,var(--background)_2%,transparent_40%)]" />
             </div>
           </div>
+
         </div>
       </section>
 
