@@ -360,7 +360,7 @@ function Index() {
 
           <div className="relative animate-fade-in lg:h-[92vh] lg:scale-105">
             <div className="pointer-events-none absolute inset-0 -z-10 blur-3xl [background:radial-gradient(55%_45%_at_50%_35%,oklch(0.72_0.09_80/0.28),transparent_70%)]" />
-            <div className="pointer-events-none absolute top-[2%] left-1/2 -z-10 w-[90%] -translate-x-1/2 opacity-70 blur-2xl sm:top-[4%] sm:w-[75%] lg:top-[5%] lg:w-[60%]">
+            <div className="pointer-events-none absolute top-[2%] left-1/2 -z-10 aspect-square w-[90%] -translate-x-1/2 opacity-70 blur-2xl sm:top-[4%] sm:w-[75%] lg:top-[5%] lg:w-[60%]">
               <img
                 src={glowAsset.url}
                 alt=""
