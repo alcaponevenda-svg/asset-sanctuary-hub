@@ -485,16 +485,14 @@ function Index() {
               <div className="about-photo-halo absolute inset-0" aria-hidden="true" />
               <div className="about-shoulder-light absolute inset-0" aria-hidden="true" />
               <div className="about-photo relative overflow-hidden rounded-md bg-[var(--gradient-gold)] p-1.5 sm:p-2">
-                <div className="relative flex aspect-square items-center justify-center overflow-hidden rounded-sm bg-black">
-                  <img
-                    src={aboutAsset}
-                    alt="Retrato do Dr. Mauro Monção Filho"
-                    loading="lazy"
-                    width={1024}
-                    height={1536}
-                    className="h-full w-full object-contain"
-                  />
-                </div>
+                <img
+                  src={aboutAsset}
+                  alt="Retrato do Dr. Mauro Monção Filho"
+                  loading="lazy"
+                  width={1024}
+                  height={1536}
+                  className="h-auto w-full rounded-sm object-contain"
+                />
                 <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(0deg,var(--background)_0%,transparent_55%)]" />
               </div>
             </div>
