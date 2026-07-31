@@ -28,6 +28,7 @@ import {
 import { AreaCard } from "@/components/AreaCard";
 import heroAsset from "@/assets/mauro-hero-4.png.asset.json";
 import heroBgAsset from "@/assets/hero-bg.png.asset.json";
+import glowAsset from "@/assets/golden-glow.jpg.asset.json";
 import sobreBgAsset from "@/assets/sobre-bg-2.png.asset.json";
 import aboutAsset from "@/assets/mauro-sobre-2.png";
 import areaInventario from "@/assets/area-inventario.jpg";
@@ -359,6 +360,16 @@ function Index() {
 
           <div className="relative animate-fade-in lg:h-[92vh] lg:scale-105">
             <div className="pointer-events-none absolute inset-0 -z-10 blur-3xl [background:radial-gradient(55%_45%_at_50%_35%,oklch(0.72_0.09_80/0.28),transparent_70%)]" />
+            <div className="pointer-events-none absolute -top-10 -right-10 left-1/4 -z-10 opacity-75 blur-2xl sm:-top-20 sm:left-1/3 lg:-top-32 lg:left-[40%]">
+              <img
+                src={glowAsset.url}
+                alt=""
+                width={600}
+                height={600}
+                className="h-full w-full object-cover"
+                aria-hidden="true"
+              />
+            </div>
             <div className="relative h-[380px] overflow-hidden sm:h-[560px] lg:h-full">
               <img
                 src={heroAsset.url}
