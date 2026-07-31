@@ -341,13 +341,13 @@ function Index() {
           className="group relative mx-auto block w-full overflow-hidden focus:outline-none"
           aria-label="Agendar consultoria com Dr. Mauro Monção Filho"
         >
-          <div className="relative h-[50vh] w-full sm:h-[55vh] lg:h-auto">
+          <div className="relative h-[55vh] w-full lg:h-auto">
             <img
               src={bannerHeroAsset.url}
               alt="Dr. Mauro Monção Filho — Advogado Patrimonial"
               width={1920}
               height={960}
-              className="absolute inset-0 h-full w-full object-cover object-center transition-transform duration-700 group-hover:scale-[1.01] sm:object-[25%_center] lg:relative lg:h-auto lg:object-center"
+              className="absolute inset-0 h-full w-full object-cover object-[25%_center] transition-transform duration-700 group-hover:scale-[1.01] lg:relative lg:h-auto lg:object-center"
               loading="eager"
               decoding="async"
             />
