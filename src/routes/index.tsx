@@ -327,37 +327,78 @@ const fieldClass =
 function Index() {
   return (
     <div id="topo" className="min-h-screen bg-background text-foreground">
-      {/* HERO - Banner Premium */}
-      <section className="relative overflow-hidden">
-        {/* SEO text for crawlers */}
-        <div className="sr-only">
-          <h1>Advogado Patrimonial especializado na proteção do seu patrimônio.</h1>
-          <p>
-            Atuação técnica e estratégica em proteção patrimonial, holding
-            familiar, inventários e planejamento sucessório — em todo o Brasil.
-          </p>
-        </div>
+      {/* HERO */}
+      <section className="relative flex min-h-[90vh] flex-col justify-center overflow-hidden py-20 lg:min-h-screen lg:py-0">
+        {/* Background Image */}
+        <div 
+          className="pointer-events-none absolute inset-0 z-0 bg-left opacity-35 brightness-150 grayscale lg:bg-left"
+          style={{ 
+            backgroundImage: `url(${heroBgAsset.url})`,
+            backgroundSize: 'cover',
+            backgroundRepeat: 'no-repeat'
+          }}
+        />
+        
+        {/* Overlays to ensure text readability and smooth transitions */}
+        <div className="pointer-events-none absolute inset-0 z-[1] bg-[linear-gradient(to_right,var(--background)_0%,transparent_60%)]" />
+        <div className="pointer-events-none absolute inset-0 z-[1] bg-[linear-gradient(0deg,var(--background)_0%,transparent_25%)]" />
+        <div className="pointer-events-none absolute inset-0 z-[1] bg-[linear-gradient(180deg,var(--background)_0%,transparent_25%)]" />
 
-        <a
-          href={CTA_HREF}
-          className="group relative mx-auto block w-full overflow-hidden focus:outline-none"
-          aria-label="Agendar consultoria com Dr. Mauro Monção Filho"
-        >
-          <div className="relative h-[40vh] w-full lg:h-auto">
-            <img
-              src={bannerHeroAsset.url}
-              alt="Dr. Mauro Monção Filho — Advogado Patrimonial"
-              width={1920}
-              height={960}
-              className="absolute inset-0 h-full w-full object-cover object-left-top transition-transform duration-700 group-hover:scale-[1.01] lg:relative lg:h-auto lg:object-center"
-              loading="eager"
-              decoding="async"
-            />
+        <div className="relative z-10 mx-auto grid max-w-7xl items-center gap-12 px-6 lg:grid-cols-2 lg:gap-20 lg:px-10">
+          <div className="max-w-2xl text-center lg:text-left">
+            <Reveal>
+              <h1 className="text-4xl font-semibold tracking-tight text-balance sm:text-5xl lg:text-7xl lg:leading-[1.1]">
+                Advogado Patrimonial especializado na{" "}
+                <span className="text-gradient-gold">proteção do seu patrimônio.</span>
+              </h1>
+            </Reveal>
+
+            <Reveal delay={200}>
+              <p className="mt-8 text-base leading-relaxed text-muted-foreground sm:text-lg lg:max-w-xl">
+                Atuação técnica e estratégica em proteção patrimonial, holding
+                familiar, inventários e planejamento sucessório — em todo o Brasil.
+              </p>
+            </Reveal>
+
+            <Reveal delay={400} className="mt-10 flex flex-col items-center gap-4 sm:flex-row lg:justify-start">
+              <GoldButton>Agendar Consultoria</GoldButton>
+              <a
+                href="#atuacao"
+                className="group flex items-center gap-2 text-sm font-medium transition-colors hover:text-gold"
+              >
+                Conhecer áreas de atuação
+                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+              </a>
+            </Reveal>
           </div>
-          {/* Smooth fade to the next section */}
-          <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(0deg,var(--background)_0%,transparent_20%)]" />
-          <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,var(--background)_0%,transparent_20%)]" />
-        </a>
+
+          <div className="relative mx-auto w-full max-w-lg lg:max-w-none">
+            {/* Golden Glow behind the head */}
+            <div 
+              className="pointer-events-none absolute top-[2%] left-1/2 z-0 aspect-square w-[90%] -translate-x-1/2 opacity-75 blur-2xl lg:w-[60%]"
+              style={{
+                backgroundImage: `url(${glowAsset.url})`,
+                backgroundSize: 'contain',
+                backgroundPosition: 'center',
+                backgroundRepeat: 'no-repeat'
+              }}
+            />
+            
+            <Reveal delay={300}>
+              <div className="relative z-10 lg:scale-105">
+                <img
+                  src={heroAsset.url}
+                  alt="Dr. Mauro Monção Filho"
+                  width={1024}
+                  height={1408}
+                  className="mx-auto h-auto w-full object-cover object-top drop-shadow-[0_20px_50px_rgba(0,0,0,0.5)]"
+                  loading="eager"
+                  priority="true"
+                />
+              </div>
+            </Reveal>
+          </div>
+        </div>
       </section>
 
       {/* ÁREAS DE ATUAÇÃO */}
