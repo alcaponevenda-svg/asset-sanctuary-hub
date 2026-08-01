@@ -373,16 +373,7 @@ function Index() {
           </div>
 
           <div className="relative mx-auto w-full max-w-lg lg:max-w-none">
-            {/* Golden Glow behind the head */}
-            <div 
-              className="pointer-events-none absolute top-[2%] left-1/2 z-0 aspect-square w-[90%] -translate-x-1/2 opacity-75 blur-2xl lg:w-[60%]"
-              style={{
-                backgroundImage: `url(${glowAsset.url})`,
-                backgroundSize: 'contain',
-                backgroundPosition: 'center',
-                backgroundRepeat: 'no-repeat'
-              }}
-            />
+            {/* Background lighting effects removed per user request */}
             
             <Reveal delay={300}>
               <div className="relative z-10 lg:scale-105">
