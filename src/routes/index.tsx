@@ -26,7 +26,7 @@ import {
   StatCard,
 } from "@/components/AboutEffects";
 import { AreaCard } from "@/components/AreaCard";
-import heroAsset from "@/assets/mauro-hero-4.png.asset.json";
+import heroAsset from "@/assets/mauro-hero-new.png.asset.json";
 import heroBgAsset from "@/assets/hero-bg.png.asset.json";
 import glowAsset from "@/assets/golden-glow.jpg.asset.json";
 import sobreBgAsset from "@/assets/sobre-bg-2.png.asset.json";
@@ -395,6 +395,8 @@ function Index() {
                   loading="eager"
                   fetchPriority="high"
                 />
+                {/* Sombreamento na parte de baixo para evitar corte seco */}
+                <div className="absolute inset-x-0 bottom-0 z-20 h-40 bg-gradient-to-t from-background via-background/60 to-transparent lg:h-52" />
               </div>
             </Reveal>
           </div>
