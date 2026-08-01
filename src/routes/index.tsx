@@ -27,7 +27,7 @@ import {
 } from "@/components/AboutEffects";
 import { AreaCard } from "@/components/AreaCard";
 import heroAsset from "@/assets/mauro-hero-new.png.asset.json";
-import heroBgAsset from "@/assets/hero-bg.png.asset.json";
+import heroBgAsset from "@/assets/hero-bg-new.png.asset.json";
 import glowAsset from "@/assets/golden-glow.jpg.asset.json";
 import sobreBgAsset from "@/assets/sobre-bg-2.png.asset.json";
 import aboutAsset from "@/assets/mauro-sobre-2.png";
@@ -331,10 +331,11 @@ function Index() {
       <section className="relative flex min-h-[90vh] flex-col justify-center overflow-hidden py-20 lg:min-h-screen lg:py-0">
         {/* Background Image */}
         <div 
-          className="pointer-events-none absolute inset-0 z-0 bg-left opacity-35 brightness-150 grayscale lg:bg-left"
+          className="pointer-events-none absolute inset-0 z-0 opacity-40 brightness-[0.8] grayscale-[0.3]"
           style={{ 
             backgroundImage: `url(${heroBgAsset.url})`,
             backgroundSize: 'cover',
+            backgroundPosition: 'center',
             backgroundRepeat: 'no-repeat'
           }}
         />
