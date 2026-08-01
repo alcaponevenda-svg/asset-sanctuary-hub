@@ -393,7 +393,7 @@ function Index() {
                   height={1408}
                   className="mx-auto h-auto w-full object-cover object-top drop-shadow-[0_20px_50px_rgba(0,0,0,0.5)]"
                   loading="eager"
-                  priority="true"
+                  fetchPriority="high"
                 />
               </div>
             </Reveal>
