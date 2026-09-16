@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 
-/** Brilho radial dourado muito discreto que acompanha o cursor na seção pai. */
+/** Brilho radial azul muito discreto que acompanha o cursor na seção pai. */
 export function MouseGlow() {
   const ref = useRef<HTMLDivElement>(null);
 
@@ -60,7 +60,7 @@ const PARTICLES = [
   { left: 94, top: 84, size: 2, delay: 9, duration: 35 },
 ];
 
-/** Partículas de poeira dourada, quase imperceptíveis. */
+/** Partículas de poeira azul, quase imperceptíveis. */
 export function DustParticles() {
   return (
     <div className="about-particles" aria-hidden="true">
@@ -149,7 +149,7 @@ export function StatCard({
       }`}
       style={{ animationDelay: `${index * 120}ms` }}
     >
-      <p className="stat-card__value text-xl font-semibold text-gold sm:text-3xl">
+      <p className="stat-card__value text-xl font-semibold text-blue sm:text-3xl">
         {prefix}
         {count}
       </p>
